@@ -276,6 +276,17 @@
       .nav-links { display: none; }
       .nav-phone { display: none; }
     }
+    @media (max-width: 600px) {
+      .nav-inner { padding: 10px 16px; }
+      .nav-logo { font-size: 15px; }
+      .nav-logo small { display: none; }
+      .lang-switcher { transform: scale(0.9); }
+      .btn-primary[style*="padding:10px"] {
+        font-size: 11px !important;
+        padding: 8px 12px !important;
+        white-space: nowrap;
+      }
+    }
 
     /* ============================================================
        HERO
@@ -1180,11 +1191,11 @@
             <div class="form-group">
               <select name="chambres">
                 <option value="" disabled selected data-i18n-option="form.rooms">Nb. de chambres</option>
-                <option value="1">1 chambre</option>
-                <option value="2">2 chambres</option>
-                <option value="3">3 chambres</option>
-                <option value="4+">4 chambres et plus</option>
-                <option value="logement-entier">Logement entier</option>
+                <option value="1" data-i18n-opt="form.opt1">1 chambre</option>
+                <option value="2" data-i18n-opt="form.opt2">2 chambres</option>
+                <option value="3" data-i18n-opt="form.opt3">3 chambres</option>
+                <option value="4+" data-i18n-opt="form.opt4">4 chambres et plus</option>
+                <option value="5+" data-i18n-opt="form.opt5">5 chambres et plus</option>
               </select>
             </div>
           </div>
@@ -1805,6 +1816,11 @@
       'form.email': 'Courriel',
       'form.city': 'Ville ou secteur',
       'form.rooms': 'Nb. de chambres',
+      'form.opt1': '1 chambre',
+      'form.opt2': '2 chambres',
+      'form.opt3': '3 chambres',
+      'form.opt4': '4 chambres et plus',
+      'form.opt5': '5 chambres et plus',
       'form.message': 'Message (optionnel)',
       'biz.company': "Nom de l'entreprise",
       'biz.contact': 'Personne contact',
@@ -1839,6 +1855,11 @@
       'form.email': 'Email',
       'form.city': 'City or area',
       'form.rooms': 'No. of rooms',
+      'form.opt1': '1 room',
+      'form.opt2': '2 rooms',
+      'form.opt3': '3 rooms',
+      'form.opt4': '4 rooms or more',
+      'form.opt5': '5 rooms or more',
       'form.message': 'Message (optional)',
       'biz.company': 'Company name',
       'biz.contact': 'Contact person',
@@ -2241,6 +2262,11 @@
     // Select first option text (Nb. de chambres)
     document.querySelectorAll('[data-i18n-option]').forEach(el => {
       const key = el.getAttribute('data-i18n-option');
+      if (t[key]) el.textContent = t[key];
+    });
+    // Other select options
+    document.querySelectorAll('[data-i18n-opt]').forEach(el => {
+      const key = el.getAttribute('data-i18n-opt');
       if (t[key]) el.textContent = t[key];
     });
 
