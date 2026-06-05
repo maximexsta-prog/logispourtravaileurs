@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="fr" id="site-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n-title="true">LogisPourTravailleurs.ca — Votre logement libre peut devenir un revenu simple.</title>
+  <meta name="description" content="Ajoutez votre logement à notre réseau et louez vos chambres à des travailleurs calmes et responsables dans la région.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* ============================================================
+       LANG SWITCHER
+    ============================================================ */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-muted);
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .lang-btn.active {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+    .footer-lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .footer-lang-btn {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      background: transparent;
+      color: rgba(255,255,255,0.5);
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .footer-lang-btn.active {
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --green-dark:   #1E3A2F;
+      --green-mid:    #2D5543;
+      --green-light:  #EAF2EE;
+      --orange:       #E8602A;
+      --orange-hover: #D0511E;
+      --white:        #FFFFFF;
+      --off-white:    #F7F5F0;
+      --text-dark:    #1A1A18;
+      --text-mid:     #4A4A45;
+      --text-muted:   #7A7A74;
+      --border:       #DDD9D0;
+
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+
+      --shadow-card: 0 2px 16px rgba(30,58,47,0.09);
+      --shadow-btn:  0 2px 8px rgba(232,96,42,0.25);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.65;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-btn);
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover { background: var(--orange-hover); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--green-dark);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 13px 26px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--green-dark);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { background: var(--green-dark); color: var(--white); }
+
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--green-dark);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-white:hover { background: var(--off-white); transform: translateY(-1px); }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--green-dark);
+    }
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--text-mid);
+      margin-top: 12px;
+      max-width: 560px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+    }
+    .check-item::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      background: var(--orange);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10l3.5 3.5L15 7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 2px;
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    /* SECTION: Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 16px;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.1;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-logo small {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+      white-space: nowrap;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-mid);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--green-dark); }
+    .nav-phone {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    @media (max-width: 1024px) {
+      .nav-links { gap: 14px; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    /* SECTION: Hero */
+    .hero {
+      background: var(--green-dark);
+      position: relative;
+      overflow: hidden;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      margin-top: 0;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('img/hero-bg.svg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.28;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 48px;
+      align-items: center;
+      padding: 72px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: #F9B27A;
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.80);
+      margin-bottom: 24px;
+      max-width: 480px;
+    }
+    .hero-checks { margin-bottom: 32px; }
+    .hero-checks .check-item { color: rgba(255,255,255,0.85); }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Form card */
+    #hero-form { scroll-margin-top: 80px; }
+    .hero-form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+    }
+    .hero-form-card h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .form-group { margin-bottom: 12px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--green-mid);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-muted); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group textarea { resize: vertical; min-height: 72px; }
+    .form-submit { width: 100%; padding: 14px; font-size: 16px; }
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-form-card { max-width: 520px; }
+    }
+
+    /* ============================================================
+       BENEFITS BAR
+    ============================================================ */
+    /* SECTION: Benefits bar */
+    .benefits-bar {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+    .benefits-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+      min-width: 160px;
+    }
+    .benefit-icon {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .benefit-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+    .benefit-text span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       RENTABILISER SECTION
+    ============================================================ */
+    /* SECTION: Pas location touristique */
+    .section-reassurance {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 24px;
+    }
+    .section-reassurance-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 56px;
+    }
+    .reassurance-svg {
+      min-width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .reassurance-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+    .reassurance-text p {
+      font-size: 16px;
+      color: var(--text-mid);
+      max-width: 620px;
+      line-height: 1.7;
+    }
+    .reassurance-text p + p { margin-top: 10px; }
+    @media (max-width: 600px) {
+      .section-reassurance-inner { flex-direction: column; gap: 28px; }
+    }
+
+    /* SECTION: Rentabiliser */
+    .section-split {
+      padding: 96px 24px;
+    }
+    .section-split-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .section-split.reverse .section-split-inner {
+      direction: rtl;
+    }
+    .section-split.reverse .section-split-inner > * {
+      direction: ltr;
+    }
+    .split-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--green-light);
+    }
+    .split-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .section-split-inner { grid-template-columns: 1fr; gap: 36px; }
+      .section-split.reverse .section-split-inner { direction: ltr; }
+    }
+
+    /* ============================================================
+       TYPES DE LOGEMENTS
+    ============================================================ */
+    /* SECTION: Types logements */
+    .section-cards {
+      background: var(--off-white);
+      padding: 96px 24px;
+    }
+    .section-cards-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-cards-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(30,58,47,0.14);
+    }
+    .card-img {
+      aspect-ratio: 16/10;
+      background: var(--green-light);
+      overflow: hidden;
+    }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .card-body { padding: 20px; }
+    .card-body h4 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+    .card-body p { font-size: 14px; color: var(--text-mid); }
+
+    /* ============================================================
+       COMBIEN ÇA RAPPORTE
+    ============================================================ */
+    /* SECTION: Revenue */
+    .section-revenue {
+      padding: 96px 24px;
+    }
+    .section-revenue-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .revenue-table {
+      margin-top: 24px;
+    }
+    .revenue-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 16px;
+    }
+    .revenue-row:first-child { border-top: 1px solid var(--border); }
+    .revenue-row span { color: var(--text-mid); }
+    .revenue-row strong {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+    .revenue-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+    .dispo-box {
+      background: var(--green-light);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      border: 1.5px solid #C2DDD1;
+    }
+    .dispo-box h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 16px;
+    }
+    .dispo-box p { font-size: 15px; color: var(--text-mid); margin-bottom: 20px; }
+    @media (max-width: 768px) {
+      .section-revenue-inner { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       COMMENT ÇA MARCHE
+    ============================================================ */
+    /* SECTION: Comment ça marche */
+    .section-steps {
+      background: var(--off-white);
+      padding: 96px 24px;
+    }
+    .section-steps-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .steps-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 14px);
+      right: calc(12.5% + 14px);
+      height: 2px;
+      background: var(--border);
+      z-index: 0;
+    }
+    .step-item {
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-number {
+      width: 56px;
+      height: 56px;
+      background: var(--green-dark);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+    .step-item h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+    .step-item p { font-size: 14px; color: var(--text-mid); }
+    .steps-cta { text-align: center; margin-top: 48px; }
+    @media (max-width: 700px) {
+      .steps-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .steps-grid::before { display: none; }
+    }
+
+    /* ============================================================
+       BÉNÉFICES PROPRIÉTAIRE
+    ============================================================ */
+    /* SECTION: Préparer logement */
+    .section-prep {
+      background: var(--white);
+      padding: 96px 24px;
+    }
+    .section-prep-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-prep-header {
+      margin-bottom: 48px;
+    }
+    .prep-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+    .prep-block {
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+    }
+    .prep-block.ours {
+      background: var(--green-dark);
+    }
+    .prep-block.theirs {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+    }
+    .prep-block-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .prep-block.ours .prep-block-label { color: rgba(255,255,255,0.5); }
+    .prep-block.theirs .prep-block-label { color: var(--orange); }
+    .prep-block h4 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .prep-block.ours h4 { color: var(--white); }
+    .prep-block.theirs h4 { color: var(--green-dark); }
+    .prep-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .prep-block.ours .prep-item { color: rgba(255,255,255,0.8); }
+    .prep-block.theirs .prep-item { color: var(--text-mid); }
+    .prep-item-dot {
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      margin-top: 6px;
+    }
+    .prep-block.ours .prep-item-dot { background: var(--orange); }
+    .prep-block.theirs .prep-item-dot { background: var(--green-mid); }
+    .prep-note {
+      background: var(--green-light);
+      border-left: 3px solid var(--green-mid);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .prep-note span { font-size: 22px; }
+    .prep-note p {
+      font-size: 15px;
+      color: var(--green-dark);
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .prep-two-col { grid-template-columns: 1fr; }
+    }
+
+    /* SECTION: Bénéfices propriétaire */
+    .section-benefits {
+      padding: 96px 24px;
+    }
+    .section-benefits-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .benefits-list { margin-top: 32px; }
+    .benefit-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .benefit-icon-lg {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: var(--green-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .benefit-row h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+    .benefit-row p { font-size: 14px; color: var(--text-mid); }
+    @media (max-width: 768px) {
+      .section-benefits-inner { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       À PROPOS MAXIME
+    ============================================================ */
+    /* SECTION: À propos */
+    .section-about {
+      background: var(--green-dark);
+      padding: 96px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-about::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+    .section-about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .about-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--green-mid);
+      border: 4px solid rgba(255,255,255,0.15);
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-content .section-label { color: #F9B27A; }
+    .about-content .section-title { color: var(--white); }
+    .about-content p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.78);
+      margin-top: 16px;
+      max-width: 560px;
+    }
+    .about-content .btn-white { margin-top: 28px; }
+    @media (max-width: 700px) {
+      .section-about-inner { grid-template-columns: 1fr; text-align: center; }
+      .about-photo { margin: 0 auto; }
+    }
+
+    /* ============================================================
+       RÉFÉRER
+    ============================================================ */
+    /* SECTION: Référer */
+    .section-referral {
+      background: var(--off-white);
+      padding: 96px 24px;
+    }
+    .section-referral-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .referral-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      border: 2px solid var(--orange);
+      border-radius: var(--radius-md);
+      padding: 20px 28px;
+      margin-top: 24px;
+    }
+    .referral-badge .amount {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--orange);
+    }
+    .referral-badge .label {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.3;
+    }
+    .referral-steps { margin-top: 24px; counter-reset: ref; }
+    .ref-step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      align-items: flex-start;
+    }
+    .ref-num {
+      width: 28px; height: 28px; min-width: 28px;
+      background: var(--orange);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 1px;
+    }
+    .ref-step p { font-size: 15px; color: var(--text-mid); }
+    .referral-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+    @media (max-width: 768px) {
+      .section-referral-inner { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       ENTREPRISES
+    ============================================================ */
+    /* SECTION: Entreprises */
+    .section-entreprises {
+      padding: 96px 24px;
+    }
+    .section-entreprises-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .entreprise-form {
+      background: var(--off-white);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      border: 1.5px solid var(--border);
+    }
+    .entreprise-form h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      .section-entreprises-inner { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    /* SECTION: FAQ */
+    .section-faq {
+      background: var(--off-white);
+      padding: 96px 24px;
+    }
+    .section-faq-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+    .faq-question:hover { color: var(--orange); }
+    .faq-icon {
+      font-size: 22px;
+      line-height: 1;
+      color: var(--orange);
+      transition: transform 0.25s;
+      min-width: 22px;
+    }
+    .faq-answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s ease, padding 0.25s;
+    }
+    .faq-answer p {
+      font-size: 15px;
+      color: var(--text-mid);
+      padding-bottom: 20px;
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-item.open .faq-answer { max-height: 300px; }
+
+    /* ============================================================
+       CTA FINAL
+    ============================================================ */
+    /* SECTION: CTA final */
+    .section-cta-final {
+      background: var(--green-mid);
+      padding: 72px 24px;
+    }
+    .section-cta-final-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .cta-final-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .cta-final-text p { font-size: 16px; color: rgba(255,255,255,0.75); }
+    .cta-final-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-phone {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    /* SECTION: Footer */
+    footer {
+      background: var(--green-dark);
+      padding: 56px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .nav-logo { font-size: 20px; color: var(--white); margin-bottom: 12px; }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 280px; }
+    .footer-col h5 {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.4); }
+    @media (max-width: 700px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       SECTION: Nav
+  ============================================================ -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">
+        LogisPourTravailleurs<span>.ca</span>
+        <small>par RLT · Réseau Logement Travailleurs</small>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#comment-ca-marche" data-i18n="nav.how" data-footer-link="0">Comment ça marche</a></li>
+        <li><a href="#entreprises" data-i18n="nav.companies" data-footer-link="2">Pour entreprises</a></li>
+        <li><a href="#faq" data-i18n="nav.faq" data-footer-link="4">FAQ</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="lang-switcher">
+          <button class="lang-btn active" id="nav-btn-fr" onclick="setLang('fr')">FR</button>
+          <button class="lang-btn" id="nav-btn-en" onclick="setLang('en')">EN</button>
+        </div>
+        <span class="nav-phone">📞 438-345-1888</span>
+        <a href="#hero-form" class="btn-primary" style="padding:10px 18px;font-size:13px;white-space:nowrap" data-i18n="nav.cta">J'ai un logement disponible</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       SECTION: Hero
+  ============================================================ -->
+  <section class="hero" id="proprietaires">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="section-label" style="color:#F9B27A" data-i18n="hero.label">Pour propriétaires</p>
+        <h1 class="hero-headline" data-i18n="hero.headline">Votre logement libre peut devenir<br><em>un revenu simple.</em></h1>
+        <p class="hero-sub" data-i18n="hero.sub">Ajoutez votre logement à notre réseau et rendez vos chambres disponibles pour des travailleurs <strong style="color:white">calmes et responsables</strong> dans la région.</p>
+        <div class="hero-checks">
+          <div class="check-item" data-i18n="hero.check1">Vous choisissez vos disponibilités.</div>
+          <div class="check-item" data-i18n="hero.check2">Nous facilitons la coordination.</div>
+          <div class="check-item" data-i18n="hero.check3">Ce n'est pas de la location touristique.</div>
+        </div>
+        <div class="hero-btns">
+          <a href="#hero-form" class="btn-primary" data-i18n="nav.cta">J'ai un logement disponible</a>
+          <a href="tel:4383451888" class="btn-outline" style="border-color:rgba(255,255,255,0.4);color:white" data-i18n="hero.btn2">Parler à quelqu'un</a>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE HERO -->
+      <div class="hero-form-card" id="hero-form">
+        <h3 data-i18n="form.title">Parlez-nous de votre logement</h3>
+        <!-- Netlify Forms: ne pas retirer les attributs data-netlify -->
+        <form name="contact-proprietaire" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact-proprietaire">
+          <p hidden><input name="bot-field"></p>
+          <div class="form-group">
+            <input type="text" name="nom" placeholder="Nom complet" data-i18n-placeholder="form.name" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="telephone" placeholder="Téléphone" data-i18n-placeholder="form.phone">
+          </div>
+          <div class="form-group">
+            <input type="email" name="courriel" placeholder="Courriel" data-i18n-placeholder="form.email" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="ville" placeholder="Ville ou secteur" data-i18n-placeholder="form.city">
+            </div>
+            <div class="form-group">
+              <select name="chambres">
+                <option value="" disabled selected data-i18n-option="form.rooms">Nb. de chambres</option>
+                <option value="1">1 chambre</option>
+                <option value="2">2 chambres</option>
+                <option value="3">3 chambres</option>
+                <option value="4+">4 chambres et plus</option>
+                <option value="logement-entier">Logement entier</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Message (optionnel)" data-i18n-placeholder="form.message"></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit" data-i18n-section="hero-form-submit">Envoyer ma demande</button>
+          <p class="form-note" data-i18n-section="hero-form-note">Réponse rapide. Aucune obligation.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Benefits bar
+  ============================================================ -->
+  <section class="benefits-bar">
+    <div class="benefits-bar-inner" data-i18n-section="benefits-bar">
+      <div class="benefit-item">
+        <div class="benefit-icon">💵</div>
+        <div class="benefit-text">
+          <strong>Jusqu'à 700 $ / mois</strong>
+          <span>par chambre occupée</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">👷</div>
+        <div class="benefit-text">
+          <strong>Travailleurs calmes</strong>
+          <span>et responsables</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">📅</div>
+        <div class="benefit-text">
+          <strong>Disponibilité selon</strong>
+          <span>votre choix</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">📋</div>
+        <div class="benefit-text">
+          <strong>Coordination</strong>
+          <span>simple</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🤝</div>
+        <div class="benefit-text">
+          <strong>Entente</strong>
+          <span>flexible</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Pas location touristique
+  ============================================================ -->
+  <section class="section-reassurance">
+    <div class="section-reassurance-inner">
+      <div class="reassurance-svg">
+        <svg width="100" height="110" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Poignée -->
+          <rect x="35" y="8" width="30" height="14" rx="6" stroke="#2D5543" stroke-width="3" fill="none"/>
+          <!-- Corps valise -->
+          <rect x="12" y="22" width="76" height="58" rx="10" fill="#E8F2EC" stroke="#2D5543" stroke-width="3"/>
+          <!-- Bande centrale -->
+          <line x1="50" y1="22" x2="50" y2="80" stroke="#2D5543" stroke-width="2.5"/>
+          <!-- Roulettes -->
+          <circle cx="28" cy="83" r="5" fill="#2D5543"/>
+          <circle cx="72" cy="83" r="5" fill="#2D5543"/>
+          <!-- Cercle barré orange -->
+          <circle cx="50" cy="51" r="28" fill="white" fill-opacity="0.6"/>
+          <circle cx="50" cy="51" r="26" stroke="#E8602A" stroke-width="5" fill="none"/>
+          <line x1="29" y1="30" x2="71" y2="72" stroke="#E8602A" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="reassurance-text" data-i18n-section="reassurance">
+        <h2>Ce n'est pas de la location touristique.</h2>
+        <p>Le réseau vise l'hébergement de travailleurs au Québec. L'objectif n'est pas de créer du va-et-vient touristique ou de transformer votre logement en hôtel.</p>
+        <p>L'idée est plus simple : offrir un endroit propre, calme et fonctionnel à des travailleurs qui ont besoin d'un logement près de leur travail.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Rentabiliser
+  ============================================================ -->
+  <section class="section-split">
+    <div class="section-split-inner">
+      <div class="split-img">
+        <img src="img/split-logement.svg" alt="Logement propre et accueillant">
+      </div>
+      <div class="split-content" data-i18n-section="rentabiliser">
+        <p class="section-label">Simple et efficace</p>
+        <h2 class="section-title">Une façon simple de rentabiliser un logement disponible.</h2>
+        <p class="section-subtitle">
+          Un logement libre peut rester vide pendant des semaines ou des mois. Avec LogisPourTravailleurs.ca, vous pouvez l'ajouter à notre réseau et le rendre disponible pour des travailleurs qui cherchent un endroit propre, simple et pratique près de leur travail.
+        </p>
+        <p class="section-subtitle" style="margin-top:12px">
+          Notre rôle est de rendre le processus plus clair, <strong>plus humain et plus simple pour les propriétaires.</strong>
+        </p>
+        <a href="#hero-form" class="btn-primary" style="margin-top:28px">Ajouter mon logement au réseau</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Types logements
+  ============================================================ -->
+  <section class="section-cards">
+    <div class="section-cards-inner">
+      <div class="section-cards-header" data-i18n-section="types-header">
+        <p class="section-label">Plusieurs options possibles</p>
+        <h2 class="section-title">Vous avez un logement comme celui-ci ?</h2>
+        <p class="section-subtitle" style="margin:12px auto 0;text-align:center">
+          Plusieurs types de logements peuvent convenir selon l'emplacement et l'entente.
+        </p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-img"><img src="img/card-logement-entier.svg" alt="Logement entier"></div>
+          <div class="card-body" data-i18n-section="type-1">
+            <h4>Logement entier disponible</h4>
+            <p>Idéal pour offrir une ou plusieurs chambres à des travailleurs, sans cohabitation avec un résident permanent.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="img/card-chambre.svg" alt="Chambre meublée"></div>
+          <div class="card-body" data-i18n-section="type-2">
+            <h4>Une ou plusieurs chambres</h4>
+            <p>Un logement peut convenir même avec une seule chambre disponible, selon l'emplacement et l'entente.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="img/card-simple.svg" alt="Espace simple et fonctionnel"></div>
+          <div class="card-body" data-i18n-section="type-3">
+            <h4>Simple, propre et fonctionnel</h4>
+            <p>Le logement n'a pas besoin d'être luxueux. Il doit surtout être propre, pratique et adapté à l'hébergement.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img"><img src="img/card-meuble.svg" alt="Logement meublé"></div>
+          <div class="card-body" data-i18n-section="type-4">
+            <h4>Meublé ou à préparer</h4>
+            <p>Vous avez déjà un logement meublé ou vous pensez le préparer ? Nous pouvons regarder avec vous ce qui serait nécessaire.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Revenue + Disponibilités
+  ============================================================ -->
+  <section class="section-revenue" id="revenus">
+    <div class="section-revenue-inner">
+      <div data-i18n-section="revenue-left">
+        <p class="section-label">Potentiel de revenu</p>
+        <h2 class="section-title">Combien un logement peut-il rapporter ?</h2>
+        <p class="section-subtitle">
+          Le revenu dépend du logement, de l'emplacement, du nombre de chambres, de l'entente et de l'occupation.
+        </p>
+        <div class="revenue-table">
+          <div class="revenue-row">
+            <span>1 chambre occupée</span>
+            <strong>jusqu'à 700 $ / mois</strong>
+          </div>
+          <div class="revenue-row">
+            <span>2 chambres occupées</span>
+            <strong>jusqu'à 1 400 $ / mois</strong>
+          </div>
+          <div class="revenue-row">
+            <span>3 chambres occupées</span>
+            <strong>jusqu'à 2 100 $ / mois</strong>
+          </div>
+        </div>
+        <p class="revenue-note">Ces montants sont donnés à titre indicatif et peuvent varier selon la situation réelle.</p>
+        <a href="#hero-form" class="btn-primary" style="margin-top:24px">Discuter de mon logement</a>
+      </div>
+      <div class="dispo-box" data-i18n-section="revenue-right">
+        <h3>Vous gardez le choix de vos disponibilités.</h3>
+        <p>Vous décidez si vous voulez proposer le logement, combien de chambres vous souhaitez offrir et quand le logement est disponible.</p>
+        <div class="check-item">Disponibilité selon votre choix</div>
+        <div class="check-item">Entente discutée avec vous</div>
+        <div class="check-item">Possibilité de commencer simplement</div>
+        <div class="check-item">Même un seul logement peut convenir</div>
+        <a href="#hero-form" class="btn-primary" style="margin-top:20px">Discuter de mon logement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Comment ça marche
+  ============================================================ -->
+  <section class="section-steps" id="comment-ca-marche">
+    <div class="section-steps-inner">
+      <div class="steps-header" data-i18n-section="steps-header">
+        <p class="section-label">Simple en 4 étapes</p>
+        <h2 class="section-title">Comment ça marche</h2>
+        <p class="section-subtitle" style="margin:12px auto 0;text-align:center">
+          Ajouter votre logement au réseau se fait en 4 étapes simples.
+        </p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div data-i18n-section="step-1">
+            <h4>Parlez-nous de votre logement</h4>
+            <p>Remplissez le formulaire ou appelez-nous. Nous regardons le secteur, le nombre de chambres et le type de logement disponible.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div data-i18n-section="step-2">
+            <h4>On vous appelle</h4>
+            <p>On discute de votre situation, de vos disponibilités, de vos attentes et du fonctionnement possible.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div data-i18n-section="step-3">
+            <h4>On clarifie l'entente</h4>
+            <p>Si le logement convient, on clarifie les règles, les montants, les disponibilités, les conditions et les responsabilités.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div data-i18n-section="step-4">
+            <h4>Les chambres sont attribuées</h4>
+            <p>Les chambres du logement sont ensuite attribuées à des travailleurs calmes et responsables près de leur lieu de travail.</p>
+          </div>
+        </div>
+      </div>
+      <div class="steps-cta" data-i18n-section="steps-cta"><a href="#hero-form" class="btn-primary">Ajouter mon logement au réseau</a></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Préparer logement
+  ============================================================ -->
+  <section class="section-prep">
+    <div class="section-prep-inner">
+      <div class="section-prep-header" data-i18n-section="prep-header">
+        <p class="section-label">Avant l'arrivée des travailleurs</p>
+        <h2 class="section-title">On vous aide à préparer votre logement.</h2>
+        <p class="section-subtitle" style="margin-top:12px">
+          Chaque logement est différent. On regarde ça avec vous — vous n'avez pas à tout figurer seul.
+        </p>
+      </div>
+      <div class="prep-two-col">
+        <div class="prep-block ours" data-i18n-section="prep-ours">
+          <p class="prep-block-label">Ce qu'on installe ensemble</p>
+          <h4>On s'occupe du setup technique.</h4>
+          <div class="prep-item"><span class="prep-item-dot"></span><span>Serrures à code — accès simple et sécurisé, sans gestion de clés</span></div>
+          <div class="prep-item"><span class="prep-item-dot"></span><span>Caméras de sécurité dans les espaces extérieurs</span></div>
+          <div class="prep-item"><span class="prep-item-dot"></span><span>Extincteurs et détecteurs de fumée conformes</span></div>
+          <div class="prep-item"><span class="prep-item-dot"></span><span>Installation et configuration — vous n'avez pas à vous en occuper</span></div>
+        </div>
+        <div class="prep-block theirs" data-i18n-section="prep-theirs">
+          <p class="prep-block-label">Ce que le logement doit avoir</p>
+          <h4>Prêt à accueillir des travailleurs.</h4>
+          <div class="prep-item"><span class="prep-item-dot"></span><span>Chambres meublées — lit, table de chevet, prises électriques accessibles</span></div>
+          <div class="prep-item"><span class="prep-item-dot"></span><span>Électroménagers fonctionnels dans les espaces communs</span></div>
+          <div class="prep-item"><span class="prep-item-dot"></span><span>Internet fourni — connexion de base incluse dans le logement</span></div>
+          <div class="prep-item"><span class="prep-item-dot"></span><span>Espace propre et fonctionnel — pas besoin d'être luxueux</span></div>
+        </div>
+      </div>
+      <div class="prep-note" data-i18n-section="prep-note">
+        <span>💬</span>
+        <p>Vous apportez le logement. On s'occupe du reste ensemble — on fait le tour avec vous avant chaque arrivée.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Bénéfices propriétaire
+  ============================================================ -->
+  <section class="section-benefits">
+    <div class="section-benefits-inner">
+      <div data-i18n-section="benefits-left">
+        <p class="section-label">Ce que ça vous apporte</p>
+        <h2 class="section-title">Un réseau local, humain et organisé.</h2>
+        <p class="section-subtitle">
+          LogisPourTravailleurs.ca est un service de coordination d'hébergement pour travailleurs. Notre rôle est de créer un pont simple entre les propriétaires qui ont un logement disponible et les travailleurs qui ont besoin d'un endroit fiable pendant leur contrat.
+        </p>
+      </div>
+      <div class="benefits-list" data-i18n-section="benefits-list">
+        <div class="benefit-row">
+          <div class="benefit-icon-lg">💰</div>
+          <div>
+            <h4>Revenu potentiel</h4>
+            <p>Un logement libre peut générer un revenu au lieu de rester vide.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-icon-lg">📋</div>
+          <div>
+            <h4>Moins de gestion</h4>
+            <p>La coordination est simplifiée pour éviter que vous ayez à tout gérer seul.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-icon-lg">👷</div>
+          <div>
+            <h4>Travailleurs responsables</h4>
+            <p>L'objectif est de loger des travailleurs calmes, propres et respectueux.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-icon-lg">📅</div>
+          <div>
+            <h4>Flexibilité</h4>
+            <p>Vous choisissez quand votre logement est disponible selon l'entente.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <div class="benefit-icon-lg">🙋</div>
+          <div>
+            <h4>Approche humaine</h4>
+            <p>Vous parlez avec une vraie personne, pas seulement avec une plateforme impersonnelle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============================================================
+       SECTION: Référer un logement
+  ============================================================ -->
+  <section class="section-referral" id="reference">
+    <div class="section-referral-inner">
+      <div data-i18n-section="referral-left">
+        <p class="section-label">Programme de référence</p>
+        <h2 class="section-title">Vous connaissez quelqu'un qui a un logement disponible ?</h2>
+        <p class="section-subtitle">
+          Nous offrons une récompense pour tout logement référé et accepté dans le réseau.
+        </p>
+        <div class="referral-badge">
+          <span class="amount">100 $</span>
+          <span class="label">pour tout logement<br>référé et accepté</span>
+        </div>
+        <p class="referral-note" style="margin-top:16px">Certaines conditions peuvent s'appliquer selon la situation et l'entente.</p>
+      </div>
+      <div data-i18n-section="referral-right">
+        <div class="referral-steps">
+          <div class="ref-step">
+            <span class="ref-num">1</span>
+            <p>Vous nous parlez d'un propriétaire ou d'un logement disponible.</p>
+          </div>
+          <div class="ref-step">
+            <span class="ref-num">2</span>
+            <p>Nous communiquons avec la personne et évaluons le logement.</p>
+          </div>
+          <div class="ref-step">
+            <span class="ref-num">3</span>
+            <p>Si le logement est accepté dans le réseau, la référence est admissible.</p>
+          </div>
+        </div>
+        <a href="#hero-form" class="btn-primary" style="margin-top:24px">Référer un logement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Entreprises
+  ============================================================ -->
+  <section class="section-entreprises" id="entreprises">
+    <div class="section-entreprises-inner">
+      <div data-i18n-section="companies-left">
+        <p class="section-label">Pour les entreprises</p>
+        <h2 class="section-title">Vous devez loger des travailleurs dans la région ?</h2>
+        <p class="section-subtitle">
+          Vous avez une équipe à loger pour un contrat, un chantier ou un projet temporaire ? Nous pouvons vous aider à trouver des options plus simples que l'hôtel, selon les logements disponibles dans le réseau.
+        </p>
+        <div style="margin-top:32px">
+          <div class="benefit-row">
+            <div class="benefit-icon-lg">🏢</div>
+            <div>
+              <h4>Contrats et chantiers</h4>
+              <p>Hébergement pour équipes en déplacement, projets temporaires ou contrats régionaux.</p>
+            </div>
+          </div>
+          <div class="benefit-row">
+            <div class="benefit-icon-lg">💸</div>
+            <div>
+              <h4>Plus simple que l'hôtel</h4>
+              <p>Des logements pratiques et abordables, adaptés aux besoins réels des travailleurs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="entreprise-form">
+        <h3 data-i18n-section="companies-form-title">Parlez-nous de vos besoins</h3>
+        <!-- Formulaire entreprises — Netlify Forms -->
+        <form name="contact-entreprise" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact-entreprise">
+          <p hidden><input name="bot-field"></p>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="entreprise" placeholder="Nom de l'entreprise" data-i18n-placeholder="biz.company" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="contact" placeholder="Personne contact" data-i18n-placeholder="biz.contact">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="email" name="courriel" placeholder="Courriel" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="travailleurs" placeholder="Nombre de travailleurs" data-i18n-placeholder="biz.workers">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="dates" placeholder="Dates approximatives" data-i18n-placeholder="biz.dates">
+            </div>
+            <div class="form-group">
+              <input type="text" name="secteur" placeholder="Ville ou secteur recherché" data-i18n-placeholder="biz.sector">
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Message (optionnel)" data-i18n-placeholder="form.message"></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit" data-i18n-section="companies-form-cta">J'ai besoin de loger des travailleurs</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: FAQ
+  ============================================================ -->
+  <section class="section-faq" id="faq">
+    <div class="section-faq-inner">
+      <div class="faq-header" data-i18n-section="faq-header">
+        <p class="section-label">Vos questions</p>
+        <h2 class="section-title">Questions fréquentes</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Est-ce que je dois accepter n'importe quel travailleur ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Non. Vous n'êtes pas obligé d'accepter un travailleur si vous n'êtes pas à l'aise. Notre rôle est de vous proposer des candidats correspondant à vos attentes, pas de vous imposer des locataires.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Est-ce que c'est la location touristique ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Non. Il ne s'agit pas de location touristique de type Airbnb. Les travailleurs logés sont généralement en contrat dans la région et cherchent un hébergement stable et pratique pour la durée de leur séjour.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Est-ce que je garde le choix de mes disponibilités ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, absolument. Vous décidez quand votre logement est disponible, pour combien de chambres et pour quelle durée. Rien n'est imposé.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Est-ce que je peux commencer avec un seul logement ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui. Même un seul logement avec une seule chambre peut convenir selon le secteur et la demande. Nous évaluons chaque situation individuellement.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Est-ce que mon logement doit être parfait ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Non. Le logement doit être propre, sécuritaire et fonctionnel. Il n'a pas besoin d'être luxueux. Si vous avez des questions sur ce qui serait nécessaire pour le préparer, on peut en discuter.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Combien est-ce que ça peut rapporter ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Le revenu varie selon le logement, le secteur et l'occupation. À titre indicatif : jusqu'à 700 $ par mois par chambre occupée. Les montants exacts sont discutés lors de notre appel.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Est-ce que je dois gérer les travailleurs moi-même ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Non. Notre rôle est de coordonner et de simplifier la gestion pour vous. Vous n'avez pas à gérer les détails quotidiens seul.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Combien de temps dure une entente ?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>La durée est discutée selon votre situation et les besoins du travailleur. Certaines ententes sont pour quelques semaines, d'autres pour plusieurs mois. Rien n'est figé à l'avance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: CTA final
+  ============================================================ -->
+  <section class="section-cta-final" id="contact">
+    <div class="section-cta-final-inner">
+      <div class="cta-final-text" data-i18n-section="cta-final">
+        <h2>Vous avez un logement disponible ?</h2>
+        <p>Parlez-nous de votre logement. Nous regarderons ensemble s'il peut être ajouté au réseau.</p>
+      </div>
+      <div class="cta-final-actions">
+        <a href="#hero-form" class="btn-primary" data-i18n-section="cta-final-btn">Ajouter mon logement au réseau</a>
+        <a href="tel:4383451888" class="cta-phone">📞 438-345-1888</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: Footer
+  ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">LogisPourTravailleurs<span style="color:var(--orange)">.ca</span></div>
+          <p data-i18n="footer.tagline">Un réseau local pour coordonner des logements simples avec des travailleurs fiables partout au Québec.</p>
+          <div class="footer-lang-switcher">
+            <button class="footer-lang-btn active" id="footer-btn-fr" onclick="setLang('fr')">FR</button>
+            <button class="footer-lang-btn" id="footer-btn-en" onclick="setLang('en')">EN</button>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n-section="footer-links-title">Liens rapides</h5>
+          <ul>
+            <li><a href="#comment-ca-marche" data-footer-link="0">Comment ça marche</a></li>
+            <li><a href="#proprietaires" data-footer-link="1">Pour propriétaires</a></li>
+            <li><a href="#entreprises" data-footer-link="2">Pour entreprises</a></li>
+            <li><a href="#reference" data-footer-link="3">Référence</a></li>
+            <li><a href="#faq" data-footer-link="4">FAQ</a></li>
+            <li><a href="#contact" data-footer-link="5">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n-section="footer-contact-title">Nous joindre</h5>
+          <ul>
+            <li><a href="tel:4383451888">438-345-1888</a></li>
+            <li><a href="mailto:contact@logispourtravaileurs.ca">contact@logispourtravaileurs.ca</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n-section="footer-copyright">© 2025 LogisPourTravailleurs.ca — par RLT · Réseau Logement Travailleurs</p>
+        <p data-i18n-section="footer-tagline-bottom">Réponse rapide. Aucune obligation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT — FAQ accordion
+  ============================================================ -->
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Ferme tous les autres
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      // Ouvre celui-ci si ce n'était pas déjà ouvert
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Smooth scroll pour les ancres nav
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+  // ============================================================
+  // TRANSLATIONS — edit text here to update both languages
+  // ============================================================
+  const translations = {
+    fr: {
+      'page.title': 'LogisPourTravailleurs.ca — Votre logement libre peut devenir un revenu simple.',
+      'page.lang': 'fr',
+      'nav.how': 'Comment ça marche',
+      'nav.owners': 'Pour propriétaires',
+      'nav.companies': 'Pour entreprises',
+      'nav.referral': 'Référence',
+      'nav.faq': 'FAQ',
+      'nav.contact': 'Contact',
+      'nav.cta': "J'ai un logement disponible",
+      'form.name': 'Nom complet',
+      'form.phone': 'Téléphone',
+      'form.email': 'Courriel',
+      'form.city': 'Ville ou secteur',
+      'form.rooms': 'Nb. de chambres',
+      'form.message': 'Message (optionnel)',
+      'biz.company': "Nom de l'entreprise",
+      'biz.contact': 'Personne contact',
+      'biz.workers': 'Nombre de travailleurs',
+      'biz.dates': 'Dates approximatives',
+      'biz.sector': 'Ville ou secteur recherché',
+
+      'hero.label': 'Pour propriétaires',
+      'hero.headline': "Votre logement libre peut devenir<br><em>un revenu simple.</em>",
+      'hero.sub': "Ajoutez votre logement à notre réseau et rendez vos chambres disponibles pour des travailleurs <strong style='color:white'>calmes et responsables</strong> dans la région.",
+      'hero.check1': 'Vous choisissez vos disponibilités.',
+      'hero.check2': 'Nous facilitons la coordination.',
+      'hero.check3': "Ce n'est pas de la location touristique.",
+      'hero.btn2': "Parler à quelqu\'un",
+
+      'form.title': 'Parlez-nous de votre logement',
+
+      'footer.tagline': 'Un réseau local pour coordonner des logements simples avec des travailleurs fiables partout au Québec.',
+    },
+    en: {
+      'page.title': 'WorkersHousing.ca — Your available unit can become simple income.',
+      'page.lang': 'en',
+      'nav.how': 'How it works',
+      'nav.owners': 'For property owners',
+      'nav.companies': 'For companies',
+      'nav.referral': 'Referral',
+      'nav.faq': 'FAQ',
+      'nav.contact': 'Contact',
+      'nav.cta': 'I have a unit available',
+      'form.name': 'Full name',
+      'form.phone': 'Phone',
+      'form.email': 'Email',
+      'form.city': 'City or area',
+      'form.rooms': 'No. of rooms',
+      'form.message': 'Message (optional)',
+      'biz.company': 'Company name',
+      'biz.contact': 'Contact person',
+      'biz.workers': 'Number of workers',
+      'biz.dates': 'Approximate dates',
+      'biz.sector': 'City or area sought',
+
+      'hero.label': 'For property owners',
+      'hero.headline': "Your available unit can become<br><em>simple income.</em>",
+      'hero.sub': "Add your property to our network and make your rooms available to <strong style='color:white'>calm and responsible workers</strong> in the region.",
+      'hero.check1': 'You choose your availability.',
+      'hero.check2': 'We handle the coordination.',
+      'hero.check3': "It's not short-term tourist rental.",
+      'hero.btn2': 'Talk to someone',
+
+      'form.title': 'Tell us about your property',
+
+      'footer.tagline': 'A local network coordinating simple housing for reliable workers across Québec.',
+    }
+  };
+
+  // ============================================================
+  // FULL PAGE TEXT SWAP — FR / EN
+  // These are complete innerHTML replacements for each section.
+  // ============================================================
+  const sectionContent = {
+    fr: {
+      'reassurance': `
+        <h2>Ce n'est pas de la location touristique.</h2>
+        <p>Le réseau vise l'hébergement de travailleurs au Québec. L'objectif n'est pas de créer du va-et-vient touristique ou de transformer votre logement en hôtel.</p>
+        <p>L'idée est plus simple : offrir un endroit propre, calme et fonctionnel à des travailleurs qui ont besoin d'un logement près de leur travail.</p>`,
+
+      'benefits-bar': `
+        <div class="benefit-item"><div class="benefit-icon">💵</div><div class="benefit-text"><strong>Jusqu'à 700 $ / mois</strong><span>par chambre occupée</span></div></div>
+        <div class="benefit-item"><div class="benefit-icon">👷</div><div class="benefit-text"><strong>Travailleurs calmes</strong><span>et responsables</span></div></div>
+        <div class="benefit-item"><div class="benefit-icon">📅</div><div class="benefit-text"><strong>Disponibilité selon</strong><span>votre choix</span></div></div>
+        <div class="benefit-item"><div class="benefit-icon">📋</div><div class="benefit-text"><strong>Coordination</strong><span>simple</span></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text"><strong>Entente</strong><span>flexible</span></div></div>`,
+
+      'rentabiliser': `
+        <p class="section-label">Simple et efficace</p>
+        <h2 class="section-title">Une façon simple de rentabiliser un logement disponible.</h2>
+        <p class="section-subtitle">Un logement libre peut rester vide pendant des semaines ou des mois. Avec LogisPourTravailleurs.ca, vous pouvez l'ajouter à notre réseau et le rendre disponible pour des travailleurs qui cherchent un endroit propre, simple et pratique près de leur travail.</p>
+        <p class="section-subtitle" style="margin-top:12px">Notre rôle est de rendre le processus plus clair, <strong>plus humain et plus simple pour les propriétaires.</strong></p>
+        <a href="#hero-form" class="btn-primary" style="margin-top:28px">Ajouter mon logement au réseau</a>`,
+
+      'types-header': `
+        <p class="section-label">Plusieurs options possibles</p>
+        <h2 class="section-title">Vous avez un logement comme celui-ci ?</h2>
+        <p class="section-subtitle" style="margin:12px auto 0;text-align:center">Plusieurs types de logements peuvent convenir selon l'emplacement et l'entente.</p>`,
+
+      'type-1': `<h4>Logement entier disponible</h4><p>Idéal pour offrir une ou plusieurs chambres à des travailleurs, sans cohabitation avec un résident permanent.</p>`,
+      'type-2': `<h4>Une ou plusieurs chambres</h4><p>Un logement peut convenir même avec une seule chambre disponible, selon l'emplacement et l'entente.</p>`,
+      'type-3': `<h4>Simple, propre et fonctionnel</h4><p>Le logement n'a pas besoin d'être luxueux. Il doit surtout être propre, pratique et adapté à l'hébergement.</p>`,
+      'type-4': `<h4>Meublé ou à préparer</h4><p>Vous avez déjà un logement meublé ou vous pensez le préparer ? Nous pouvons regarder avec vous ce qui serait nécessaire.</p>`,
+
+      'revenue-left': `
+        <p class="section-label">Potentiel de revenu</p>
+        <h2 class="section-title">Combien un logement peut-il rapporter ?</h2>
+        <p class="section-subtitle">Le revenu dépend du logement, de l'emplacement, du nombre de chambres, de l'entente et de l'occupation.</p>
+        <div class="revenue-table">
+          <div class="revenue-row"><span>1 chambre occupée</span><strong>jusqu'à 700 $ / mois</strong></div>
+          <div class="revenue-row"><span>2 chambres occupées</span><strong>jusqu'à 1 400 $ / mois</strong></div>
+          <div class="revenue-row"><span>3 chambres occupées</span><strong>jusqu'à 2 100 $ / mois</strong></div>
+        </div>
+        <p class="revenue-note">Ces montants sont donnés à titre indicatif et peuvent varier selon la situation réelle.</p>
+        <a href="#hero-form" class="btn-primary" style="margin-top:24px">Discuter de mon logement</a>`,
+
+      'revenue-right': `
+        <h3>Vous gardez le choix de vos disponibilités.</h3>
+        <p>Vous décidez si vous voulez proposer le logement, combien de chambres vous souhaitez offrir et quand le logement est disponible.</p>
+        <div class="check-item">Disponibilité selon votre choix</div>
+        <div class="check-item">Entente discutée avec vous</div>
+        <div class="check-item">Possibilité de commencer simplement</div>
+        <div class="check-item">Même un seul logement peut convenir</div>
+        <a href="#hero-form" class="btn-primary" style="margin-top:20px">Discuter de mon logement</a>`,
+
+      'steps-header': `
+        <p class="section-label">Simple en 4 étapes</p>
+        <h2 class="section-title">Comment ça marche</h2>
+        <p class="section-subtitle" style="margin:12px auto 0;text-align:center">Ajouter votre logement au réseau se fait en 4 étapes simples.</p>`,
+
+      'step-1': `<h4>Parlez-nous de votre logement</h4><p>Remplissez le formulaire ou appelez-nous. Nous regardons le secteur, le nombre de chambres et le type de logement disponible.</p>`,
+      'step-2': `<h4>On vous appelle</h4><p>On discute de votre situation, de vos disponibilités, de vos attentes et du fonctionnement possible.</p>`,
+      'step-3': `<h4>On clarifie l'entente</h4><p>Si le logement convient, on clarifie les règles, les montants, les disponibilités, les conditions et les responsabilités.</p>`,
+      'step-4': `<h4>Les chambres sont attribuées</h4><p>Les chambres du logement sont ensuite attribuées à des travailleurs calmes et responsables près de leur lieu de travail.</p>`,
+      'steps-cta': `<a href="#hero-form" class="btn-primary">Ajouter mon logement au réseau</a>`,
+
+      'prep-header': `
+        <p class="section-label">Avant l'arrivée des travailleurs</p>
+        <h2 class="section-title">On vous aide à préparer votre logement.</h2>
+        <p class="section-subtitle" style="margin-top:12px">Chaque logement est différent. On regarde ça avec vous — vous n'avez pas à tout figurer seul.</p>`,
+
+      'prep-ours': `
+        <p class="prep-block-label">Ce qu'on installe ensemble</p>
+        <h4>On s'occupe du setup technique.</h4>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Serrures à code — accès simple et sécurisé, sans gestion de clés</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Caméras de sécurité dans les espaces extérieurs</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Extincteurs et détecteurs de fumée conformes</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Installation et configuration — vous n'avez pas à vous en occuper</span></div>`,
+
+      'prep-theirs': `
+        <p class="prep-block-label">Ce que le logement doit avoir</p>
+        <h4>Prêt à accueillir des travailleurs.</h4>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Chambres meublées — lit, table de chevet, prises électriques accessibles</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Électroménagers fonctionnels dans les espaces communs</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Internet fourni — connexion de base incluse dans le logement</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Espace propre et fonctionnel — pas besoin d'être luxueux</span></div>`,
+
+      'prep-note': `<span>💬</span><p>Vous apportez le logement. On s'occupe du reste ensemble — on fait le tour avec vous avant chaque arrivée.</p>`,
+
+      'benefits-left': `
+        <p class="section-label">Ce que ça vous apporte</p>
+        <h2 class="section-title">Un réseau local, humain et organisé.</h2>
+        <p class="section-subtitle">LogisPourTravailleurs.ca est un service de coordination d'hébergement pour travailleurs. Notre rôle est de créer un pont simple entre les propriétaires qui ont un logement disponible et les travailleurs qui ont besoin d'un endroit fiable pendant leur contrat.</p>`,
+
+      'benefits-list': `
+        <div class="benefit-row"><div class="benefit-icon-lg">💰</div><div><h4>Revenu potentiel</h4><p>Un logement libre peut générer un revenu au lieu de rester vide.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-lg">📋</div><div><h4>Moins de gestion</h4><p>La coordination est simplifiée pour éviter que vous ayez à tout gérer seul.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-lg">👷</div><div><h4>Travailleurs responsables</h4><p>L'objectif est de loger des travailleurs calmes, propres et respectueux.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-lg">📅</div><div><h4>Flexibilité</h4><p>Vous choisissez quand votre logement est disponible selon l'entente.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-lg">🙋</div><div><h4>Approche humaine</h4><p>Vous parlez avec une vraie personne, pas seulement avec une plateforme impersonnelle.</p></div></div>`,
+
+      'referral-left': `
+        <p class="section-label">Programme de référence</p>
+        <h2 class="section-title">Vous connaissez quelqu'un qui a un logement disponible ?</h2>
+        <p class="section-subtitle">Nous offrons une récompense pour tout logement référé et accepté dans le réseau.</p>
+        <div class="referral-badge"><span class="amount">100 $</span><span class="label">pour tout logement<br>référé et accepté</span></div>
+        <p class="referral-note" style="margin-top:16px">Certaines conditions peuvent s'appliquer selon la situation et l'entente.</p>`,
+
+      'referral-right': `
+        <div class="ref-step"><span class="ref-num">1</span><p>Vous nous parlez d'un propriétaire ou d'un logement disponible.</p></div>
+        <div class="ref-step"><span class="ref-num">2</span><p>Nous communiquons avec la personne et évaluons le logement.</p></div>
+        <div class="ref-step"><span class="ref-num">3</span><p>Si le logement est accepté dans le réseau, la référence est admissible.</p></div>
+        <a href="#hero-form" class="btn-primary" style="margin-top:24px">Référer un logement</a>`,
+
+      'companies-left': `
+        <p class="section-label">Pour les entreprises</p>
+        <h2 class="section-title">Vous devez loger des travailleurs dans la région ?</h2>
+        <p class="section-subtitle">Vous avez une équipe à loger pour un contrat, un chantier ou un projet temporaire ? Nous pouvons vous aider à trouver des options plus simples que l'hôtel, selon les logements disponibles dans le réseau.</p>
+        <div style="margin-top:32px">
+          <div class="benefit-row"><div class="benefit-icon-lg">🏢</div><div><h4>Contrats et chantiers</h4><p>Hébergement pour équipes en déplacement, projets temporaires ou contrats régionaux.</p></div></div>
+          <div class="benefit-row"><div class="benefit-icon-lg">💸</div><div><h4>Plus simple que l'hôtel</h4><p>Des logements pratiques et abordables, adaptés aux besoins réels des travailleurs.</p></div></div>
+        </div>`,
+
+      'companies-form-title': "Parlez-nous de vos besoins",
+      'companies-form-cta': "J'ai besoin de loger des travailleurs",
+      'hero-form-submit': 'Envoyer ma demande',
+      'hero-form-note': 'Réponse rapide. Aucune obligation.',
+
+      'faq-header': `
+        <p class="section-label">Vos questions</p>
+        <h2 class="section-title">Questions fréquentes</h2>`,
+
+      'faqs': [
+        ["Est-ce que je dois accepter n'importe quel travailleur ?", "Non. Vous n'êtes pas obligé d'accepter un travailleur si vous n'êtes pas à l'aise. Notre rôle est de vous proposer des candidats correspondant à vos attentes, pas de vous imposer des locataires."],
+        ["Est-ce que c'est la location touristique ?", "Non. Il ne s'agit pas de location touristique de type Airbnb. Les travailleurs logés sont généralement en contrat dans la région et cherchent un hébergement stable et pratique pour la durée de leur séjour."],
+        ["Est-ce que je garde le choix de mes disponibilités ?", "Oui, absolument. Vous décidez quand votre logement est disponible, pour combien de chambres et pour quelle durée. Rien n'est imposé."],
+        ["Est-ce que je peux commencer avec un seul logement ?", "Oui. Même un seul logement avec une seule chambre peut convenir selon le secteur et la demande. Nous évaluons chaque situation individuellement."],
+        ["Est-ce que mon logement doit être parfait ?", "Non. Le logement doit être propre, sécuritaire et fonctionnel. Il n'a pas besoin d'être luxueux. Si vous avez des questions sur ce qui serait nécessaire pour le préparer, on peut en discuter."],
+        ["Combien est-ce que ça peut rapporter ?", "Le revenu varie selon le logement, le secteur et l'occupation. À titre indicatif : jusqu'à 700 $ par mois par chambre occupée. Les montants exacts sont discutés lors de notre appel."],
+        ["Est-ce que je dois gérer les travailleurs moi-même ?", "Non. Notre rôle est de coordonner et de simplifier la gestion pour vous. Vous n'avez pas à gérer les détails quotidiens seul."],
+        ["Combien de temps dure une entente ?", "La durée est discutée selon votre situation et les besoins du travailleur. Certaines ententes sont pour quelques semaines, d'autres pour plusieurs mois. Rien n'est figé à l'avance."],
+      ],
+
+      'cta-final': `
+        <h2>Vous avez un logement disponible ?</h2>
+        <p>Parlez-nous de votre logement. Nous regarderons ensemble s'il peut être ajouté au réseau.</p>`,
+      'cta-final-btn': "Ajouter mon logement au réseau",
+
+      'footer-links-title': 'Liens rapides',
+      'footer-contact-title': 'Nous joindre',
+      'footer-links': ['Comment ça marche','Pour propriétaires','Pour entreprises','Référence','FAQ','Contact'],
+      'footer-copyright': '© 2025 LogisPourTravailleurs.ca — par RLT · Réseau Logement Travailleurs',
+      'footer-tagline-bottom': 'Réponse rapide. Aucune obligation.',
+    },
+
+    en: {
+      'page.title': 'WorkersHousing.ca — Your available unit can become simple income.',
+      'reassurance': `
+        <h2>This is not short-term tourist rental.</h2>
+        <p>Our network focuses on housing workers across Québec. The goal is not to create tourist traffic or turn your property into a hotel.</p>
+        <p>The idea is simple: offer a clean, calm, and functional space to workers who need housing near their job site.</p>`,
+
+      'benefits-bar': `
+        <div class="benefit-item"><div class="benefit-icon">💵</div><div class="benefit-text"><strong>Up to $700 / month</strong><span>per occupied room</span></div></div>
+        <div class="benefit-item"><div class="benefit-icon">👷</div><div class="benefit-text"><strong>Calm, responsible</strong><span>workers</span></div></div>
+        <div class="benefit-item"><div class="benefit-icon">📅</div><div class="benefit-text"><strong>Availability</strong><span>on your terms</span></div></div>
+        <div class="benefit-item"><div class="benefit-icon">📋</div><div class="benefit-text"><strong>Simple</strong><span>coordination</span></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text"><strong>Flexible</strong><span>arrangement</span></div></div>`,
+
+      'rentabiliser': `
+        <p class="section-label">Simple and effective</p>
+        <h2 class="section-title">A simple way to generate income from an available unit.</h2>
+        <p class="section-subtitle">A vacant unit can sit empty for weeks or months. With LogisPourTravailleurs.ca, you can add it to our network and make it available to workers looking for a clean, simple, practical place near their job.</p>
+        <p class="section-subtitle" style="margin-top:12px">Our role is to make the process clearer, <strong>more human and simpler for property owners.</strong></p>
+        <a href="#hero-form" class="btn-primary" style="margin-top:28px">Add my property to the network</a>`,
+
+      'types-header': `
+        <p class="section-label">Multiple options available</p>
+        <h2 class="section-title">Do you have a place like this?</h2>
+        <p class="section-subtitle" style="margin:12px auto 0;text-align:center">Several types of properties may qualify depending on location and arrangement.</p>`,
+
+      'type-1': `<h4>Entire unit available</h4><p>Ideal for offering one or more rooms to workers, without cohabitation with a permanent resident.</p>`,
+      'type-2': `<h4>One or more rooms</h4><p>A unit can qualify even with a single room available, depending on location and arrangement.</p>`,
+      'type-3': `<h4>Simple, clean and functional</h4><p>The property doesn't need to be luxurious — it just needs to be clean, practical and suitable for housing.</p>`,
+      'type-4': `<h4>Furnished or to be prepared</h4><p>Already have a furnished unit, or thinking about getting one ready? We can walk through what would be needed.</p>`,
+
+      'revenue-left': `
+        <p class="section-label">Income potential</p>
+        <h2 class="section-title">How much can a unit generate?</h2>
+        <p class="section-subtitle">Income depends on the property, location, number of rooms, arrangement and occupancy.</p>
+        <div class="revenue-table">
+          <div class="revenue-row"><span>1 room occupied</span><strong>up to $700 / month</strong></div>
+          <div class="revenue-row"><span>2 rooms occupied</span><strong>up to $1,400 / month</strong></div>
+          <div class="revenue-row"><span>3 rooms occupied</span><strong>up to $2,100 / month</strong></div>
+        </div>
+        <p class="revenue-note">These figures are estimates and may vary depending on the actual situation.</p>
+        <a href="#hero-form" class="btn-primary" style="margin-top:24px">Discuss my property</a>`,
+
+      'revenue-right': `
+        <h3>You keep control of your availability.</h3>
+        <p>You decide whether to list the property, how many rooms to offer, and when the unit is available.</p>
+        <div class="check-item">Availability on your terms</div>
+        <div class="check-item">Arrangement discussed with you</div>
+        <div class="check-item">Option to start small</div>
+        <div class="check-item">Even a single unit can qualify</div>
+        <a href="#hero-form" class="btn-primary" style="margin-top:20px">Discuss my property</a>`,
+
+      'steps-header': `
+        <p class="section-label">Simple in 4 steps</p>
+        <h2 class="section-title">How it works</h2>
+        <p class="section-subtitle" style="margin:12px auto 0;text-align:center">Adding your property to the network takes 4 simple steps.</p>`,
+
+      'step-1': `<h4>Tell us about your property</h4><p>Fill out the form or call us. We look at the area, number of rooms and type of unit available.</p>`,
+      'step-2': `<h4>We call you</h4><p>We discuss your situation, availability, expectations and how things could work.</p>`,
+      'step-3': `<h4>We clarify the arrangement</h4><p>If the property works, we clarify the rules, amounts, availability, conditions and responsibilities.</p>`,
+      'step-4': `<h4>Rooms are assigned</h4><p>The rooms are then assigned to calm, responsible workers near their place of work.</p>`,
+      'steps-cta': `<a href="#hero-form" class="btn-primary">Add my property to the network</a>`,
+
+      'prep-header': `
+        <p class="section-label">Before workers arrive</p>
+        <h2 class="section-title">We help you get your property ready.</h2>
+        <p class="section-subtitle" style="margin-top:12px">Every property is different. We go through it with you — you don't have to figure it out alone.</p>`,
+
+      'prep-ours': `
+        <p class="prep-block-label">What we set up together</p>
+        <h4>We handle the technical setup.</h4>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Code locks — simple, secure access with no key management</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Security cameras in exterior spaces</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Compliant fire extinguishers and smoke detectors</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Installation and setup — nothing for you to worry about</span></div>`,
+
+      'prep-theirs': `
+        <p class="prep-block-label">What the property needs to have</p>
+        <h4>Ready to welcome workers.</h4>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Furnished rooms — bed, nightstand, accessible electrical outlets</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Functional appliances in common areas</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Internet provided — basic connection included in the unit</span></div>
+        <div class="prep-item"><span class="prep-item-dot"></span><span>Clean and functional space — no need to be luxurious</span></div>`,
+
+      'prep-note': `<span>💬</span><p>You bring the property. We handle the rest together — we do a walkthrough with you before every arrival.</p>`,
+
+      'benefits-left': `
+        <p class="section-label">What you get</p>
+        <h2 class="section-title">A local, human, organized network.</h2>
+        <p class="section-subtitle">LogisPourTravailleurs.ca is a worker housing coordination service. Our role is to create a simple bridge between property owners with available units and workers who need a reliable place during their contract.</p>`,
+
+      'benefits-list': `
+        <div class="benefit-row"><div class="benefit-icon-lg">💰</div><div><h4>Income potential</h4><p>A vacant unit can generate income instead of sitting empty.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-lg">📋</div><div><h4>Less to manage</h4><p>Coordination is simplified so you don't have to handle everything on your own.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-lg">👷</div><div><h4>Responsible workers</h4><p>The goal is to house calm, clean and respectful workers.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-lg">📅</div><div><h4>Flexibility</h4><p>You choose when your unit is available, based on the arrangement.</p></div></div>
+        <div class="benefit-row"><div class="benefit-icon-lg">🙋</div><div><h4>Human approach</h4><p>You talk to a real person — not just an impersonal platform.</p></div></div>`,
+
+      'referral-left': `
+        <p class="section-label">Referral program</p>
+        <h2 class="section-title">Know someone with an available unit?</h2>
+        <p class="section-subtitle">We offer a reward for every property referred and accepted into the network.</p>
+        <div class="referral-badge"><span class="amount">$100</span><span class="label">for every property<br>referred and accepted</span></div>
+        <p class="referral-note" style="margin-top:16px">Certain conditions may apply depending on the situation and arrangement.</p>`,
+
+      'referral-right': `
+        <div class="ref-step"><span class="ref-num">1</span><p>You tell us about an owner or an available property.</p></div>
+        <div class="ref-step"><span class="ref-num">2</span><p>We reach out to the person and evaluate the property.</p></div>
+        <div class="ref-step"><span class="ref-num">3</span><p>If the property is accepted into the network, the referral qualifies.</p></div>
+        <a href="#hero-form" class="btn-primary" style="margin-top:24px">Refer a property</a>`,
+
+      'companies-left': `
+        <p class="section-label">For companies</p>
+        <h2 class="section-title">Need to house workers in the region?</h2>
+        <p class="section-subtitle">Have a team to house for a contract, job site or temporary project? We can help you find simpler options than a hotel, based on available properties in the network.</p>
+        <div style="margin-top:32px">
+          <div class="benefit-row"><div class="benefit-icon-lg">🏢</div><div><h4>Contracts and job sites</h4><p>Housing for travelling teams, temporary projects or regional contracts.</p></div></div>
+          <div class="benefit-row"><div class="benefit-icon-lg">💸</div><div><h4>Simpler than a hotel</h4><p>Practical, affordable housing tailored to the real needs of workers.</p></div></div>
+        </div>`,
+
+      'companies-form-title': "Tell us about your needs",
+      'companies-form-cta': "I need to house workers",
+      'hero-form-submit': 'Send my request',
+      'hero-form-note': 'Quick response. No obligation.',
+
+      'faq-header': `
+        <p class="section-label">Your questions</p>
+        <h2 class="section-title">Frequently asked questions</h2>`,
+
+      'faqs': [
+        ["Do I have to accept any worker?", "No. You are not required to accept a worker if you're not comfortable. Our role is to propose candidates that match your expectations — not to impose tenants on you."],
+        ["Is this short-term tourist rental?", "No. This is not Airbnb-style short-term rental. Workers housed through our network are generally on contract in the region and looking for stable, practical accommodation for the duration of their stay."],
+        ["Do I keep control of my availability?", "Yes, absolutely. You decide when your property is available, for how many rooms and for how long. Nothing is imposed."],
+        ["Can I start with just one unit?", "Yes. Even a single unit with one room can qualify depending on the area and demand. We evaluate every situation individually."],
+        ["Does my property need to be perfect?", "No. The property needs to be clean, safe and functional. It doesn't need to be luxurious. If you have questions about what would be needed to get it ready, we can discuss it."],
+        ["How much can it generate?", "Income varies by property, area and occupancy. As a reference: up to $700 per month per occupied room. Exact amounts are discussed during our call."],
+        ["Do I have to manage the workers myself?", "No. Our role is to coordinate and simplify management for you. You don't have to handle the daily details on your own."],
+        ["How long does an arrangement last?", "The duration is discussed based on your situation and the worker's needs. Some arrangements are for a few weeks, others for several months. Nothing is fixed in advance."],
+      ],
+
+      'cta-final': `
+        <h2>Have a unit available?</h2>
+        <p>Tell us about your property. We'll look at it together to see if it can join the network.</p>`,
+      'cta-final-btn': "Add my property to the network",
+
+      'footer-links-title': 'Quick links',
+      'footer-contact-title': 'Get in touch',
+      'footer-links': ['How it works','For property owners','For companies','Referral','FAQ','Contact'],
+      'footer-copyright': '© 2025 LogisPourTravailleurs.ca — by RLT · Réseau Logement Travailleurs',
+      'footer-tagline-bottom': 'Quick response. No obligation.',
+      'footer.tagline': 'A local network coordinating simple housing for reliable workers across Québec.',
+    }
+  };
+
+  // ============================================================
+  // APPLY LANGUAGE
+  // ============================================================
+  function setLang(lang) {
+    const t = translations[lang];
+    const s = sectionContent[lang];
+
+    // Update <html lang>
+    document.getElementById('site-root').setAttribute('lang', lang);
+
+    // Update page title
+    document.title = t['page.title'];
+
+    // Update nav-btn active states
+    ['fr','en'].forEach(l => {
+      const nb = document.getElementById('nav-btn-' + l);
+      const fb = document.getElementById('footer-btn-' + l);
+      if (nb) nb.classList.toggle('active', l === lang);
+      if (fb) fb.classList.toggle('active', l === lang);
+    });
+
+    // Update all data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    // Update section content via data-i18n-section
+    document.querySelectorAll('[data-i18n-section]').forEach(el => {
+      const key = el.getAttribute('data-i18n-section');
+      if (s[key] !== undefined) el.innerHTML = s[key];
+    });
+
+    // FAQ — rebuild dynamically
+    const faqList = document.querySelector('.faq-list');
+    if (faqList && s['faqs']) {
+      faqList.innerHTML = s['faqs'].map(([q, a]) => `
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            ${q}<span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><p>${a}</p></div>
+        </div>`).join('');
+    }
+
+    // Nav links — rebuild hrefs
+    const navLinks = document.querySelectorAll('.nav-links a[data-i18n]');
+    navLinks.forEach(a => {
+      const key = a.getAttribute('data-i18n');
+      if (t[key]) a.textContent = t[key];
+    });
+
+    // Footer links
+    document.querySelectorAll('[data-footer-link]').forEach(a => {
+      const i = parseInt(a.getAttribute('data-footer-link'));
+      if (s['footer-links'] && s['footer-links'][i]) a.textContent = s['footer-links'][i];
+    });
+
+    // Footer brand tagline
+    const fbrand = document.querySelector('[data-i18n="footer.tagline"]');
+    if (fbrand && t['footer.tagline']) fbrand.innerHTML = t['footer.tagline'];
+
+    // Form placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key]) el.setAttribute('placeholder', t[key]);
+    });
+
+    // Select first option text (Nb. de chambres)
+    document.querySelectorAll('[data-i18n-option]').forEach(el => {
+      const key = el.getAttribute('data-i18n-option');
+      if (t[key]) el.textContent = t[key];
+    });
+
+    // Save preference
+    localStorage.setItem('lang', lang);
+  }
+
+  // On load — restore saved language
+  document.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('lang') || 'fr';
+    if (saved !== 'fr') setLang(saved);
+  });
+  </script>
+
+</body>
+</html>

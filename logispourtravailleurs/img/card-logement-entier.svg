@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <rect width="400" height="250" fill="#B8CFC0"/>
+  <!-- Sky -->
+  <rect width="400" height="160" fill="#C8DDD8"/>
+  <!-- Clouds -->
+  <ellipse cx="80" cy="50" rx="40" ry="18" fill="white" opacity="0.7"/>
+  <ellipse cx="110" cy="42" rx="30" ry="16" fill="white" opacity="0.7"/>
+  <ellipse cx="55" cy="48" rx="25" ry="14" fill="white" opacity="0.7"/>
+  <ellipse cx="300" cy="60" rx="35" ry="15" fill="white" opacity="0.6"/>
+  <ellipse cx="325" cy="53" rx="25" ry="13" fill="white" opacity="0.6"/>
+  <!-- Ground -->
+  <rect x="0" y="180" width="400" height="70" fill="#8AA878"/>
+  <!-- House body -->
+  <rect x="100" y="110" width="200" height="120" fill="#EAE0D0"/>
+  <!-- Roof -->
+  <polygon points="80,115 200,30 320,115" fill="#5C4A35"/>
+  <!-- Chimney -->
+  <rect x="240" y="48" width="24" height="48" fill="#6B5240"/>
+  <!-- Door -->
+  <rect x="170" y="170" width="50" height="60" rx="4" fill="#5C4A35"/>
+  <circle cx="214" cy="202" r="4" fill="#C8A870"/>
+  <!-- Windows -->
+  <rect x="112" y="140" width="50" height="45" rx="3" fill="#A8C4B8"/>
+  <rect x="112" y="140" width="50" height="45" rx="3" fill="none" stroke="#8A7A60" stroke-width="2"/>
+  <line x1="137" y1="140" x2="137" y2="185" stroke="#8A7A60" stroke-width="1.5"/>
+  <line x1="112" y1="162" x2="162" y2="162" stroke="#8A7A60" stroke-width="1.5"/>
+  <rect x="238" y="140" width="50" height="45" rx="3" fill="#A8C4B8"/>
+  <rect x="238" y="140" width="50" height="45" rx="3" fill="none" stroke="#8A7A60" stroke-width="2"/>
+  <line x1="263" y1="140" x2="263" y2="185" stroke="#8A7A60" stroke-width="1.5"/>
+  <line x1="238" y1="162" x2="288" y2="162" stroke="#8A7A60" stroke-width="1.5"/>
+  <!-- Path -->
+  <path d="M185 230 Q200 215 215 230 L225 250 L175 250 Z" fill="#C8B898"/>
+  <!-- Bushes -->
+  <ellipse cx="120" cy="232" rx="22" ry="16" fill="#6A8A54"/>
+  <ellipse cx="280" cy="232" rx="22" ry="16" fill="#6A8A54"/>
+  <!-- Tree -->
+  <rect x="340" y="140" width="8" height="90" fill="#5A4A35"/>
+  <ellipse cx="344" cy="120" rx="28" ry="34" fill="#4E7A3C"/>
+</svg>
