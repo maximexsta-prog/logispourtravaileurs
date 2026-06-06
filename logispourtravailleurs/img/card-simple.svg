@@ -61,17 +61,31 @@
 
   <!-- Desk -->
   <rect x="28" y="130" width="196" height="12" rx="3" fill="#7A6450"/>
-  <rect x="28" y="138" width="196" height="5" fill="#4A3828" opacity="0.1" rx="1"/>
+  <!-- Front edge depth -->
+  <rect x="28" y="139" width="196" height="5" fill="#3A2818" opacity="0.25" rx="1"/>
+  <!-- Legs -->
   <rect x="36" y="142" width="8" height="50" rx="3" fill="#6A5442"/>
   <rect x="200" y="142" width="8" height="50" rx="3" fill="#6A5442"/>
+  <!-- Stretcher rail connecting legs -->
+  <rect x="36" y="163" width="172" height="5" rx="2" fill="#6A5442" opacity="0.62"/>
   <!-- Desk mat -->
   <rect x="44" y="125" width="118" height="8" rx="2" fill="#8A7460" opacity="0.45"/>
 
-  <!-- Chair -->
+  <!-- Chair seat -->
   <rect x="78" y="150" width="72" height="42" rx="6" fill="#8B9E7A"/>
+  <!-- Seat front face depth -->
+  <rect x="78" y="186" width="72" height="5" fill="#6A7E5A" opacity="0.42"/>
+  <!-- Chair back panel -->
   <rect x="78" y="140" width="72" height="18" rx="4" fill="#7A8E6A"/>
+  <!-- Chair back slats -->
+  <line x1="95" y1="141" x2="95" y2="157" stroke="#6A7E5A" stroke-width="2" opacity="0.55"/>
+  <line x1="110" y1="141" x2="110" y2="157" stroke="#6A7E5A" stroke-width="2" opacity="0.55"/>
+  <line x1="125" y1="141" x2="125" y2="157" stroke="#6A7E5A" stroke-width="2" opacity="0.55"/>
+  <line x1="140" y1="141" x2="140" y2="157" stroke="#6A7E5A" stroke-width="2" opacity="0.55"/>
+  <!-- Armrests -->
   <rect x="76" y="152" width="8" height="8" rx="2" fill="#6A7E5A"/>
   <rect x="140" y="152" width="8" height="8" rx="2" fill="#6A7E5A"/>
+  <!-- Legs -->
   <rect x="84" y="190" width="6" height="22" rx="2" fill="#5A4A35"/>
   <rect x="138" y="190" width="6" height="22" rx="2" fill="#5A4A35"/>
 

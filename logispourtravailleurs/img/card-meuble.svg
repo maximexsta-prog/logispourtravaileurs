@@ -50,12 +50,23 @@
 
   <!-- Sofa -->
   <rect x="14" y="146" width="106" height="58" rx="10" fill="#8B9E7A"/>
+  <!-- Sofa back panel -->
   <rect x="14" y="136" width="106" height="22" rx="7" fill="#7A8E6A"/>
+  <!-- Sofa back cushions -->
+  <rect x="18" y="138" width="42" height="18" rx="5" fill="#96AA84"/>
+  <rect x="66" y="138" width="42" height="18" rx="5" fill="#96AA84"/>
+  <!-- Sofa arms -->
   <rect x="8" y="143" width="18" height="52" rx="6" fill="#7A8E6A"/>
+  <!-- Arm top surface -->
+  <rect x="8" y="143" width="18" height="5" rx="3" fill="#9AB08A" opacity="0.5"/>
   <rect x="108" y="143" width="18" height="52" rx="6" fill="#7A8E6A"/>
-  <!-- Sofa cushions -->
+  <rect x="108" y="143" width="18" height="5" rx="3" fill="#9AB08A" opacity="0.5"/>
+  <!-- Seat cushions -->
   <rect x="22" y="146" width="42" height="42" rx="7" fill="#96AA84"/>
   <rect x="70" y="146" width="42" height="42" rx="7" fill="#96AA84"/>
+  <!-- Cushion front face -->
+  <rect x="22" y="182" width="42" height="5" fill="#7A8E6A" opacity="0.35"/>
+  <rect x="70" y="182" width="42" height="5" fill="#7A8E6A" opacity="0.35"/>
   <!-- Cushion stitch lines -->
   <line x1="22" y1="165" x2="64" y2="165" stroke="#7A8E6A" stroke-width="1" opacity="0.38"/>
   <line x1="70" y1="165" x2="112" y2="165" stroke="#7A8E6A" stroke-width="1" opacity="0.38"/>
@@ -73,19 +84,34 @@
 
   <!-- Armchair (right) -->
   <rect x="278" y="150" width="104" height="54" rx="10" fill="#C47858"/>
+  <!-- Armchair back panel -->
   <rect x="278" y="138" width="104" height="22" rx="7" fill="#B06848"/>
+  <!-- Armchair back cushion -->
+  <rect x="282" y="140" width="96" height="18" rx="5" fill="#CE8868" opacity="0.72"/>
+  <!-- Arms -->
   <rect x="268" y="146" width="18" height="48" rx="6" fill="#B06848"/>
+  <!-- Arm top surface -->
+  <rect x="268" y="146" width="18" height="5" rx="3" fill="#D08868" opacity="0.5"/>
   <rect x="374" y="146" width="18" height="48" rx="6" fill="#B06848"/>
-  <!-- Seat cushion highlight -->
+  <rect x="374" y="146" width="18" height="5" rx="3" fill="#D08868" opacity="0.5"/>
+  <!-- Seat cushion -->
   <rect x="284" y="150" width="92" height="42" rx="8" fill="#CE8868" opacity="0.65"/>
+  <!-- Seat cushion front face -->
+  <rect x="284" y="186" width="92" height="5" fill="#9A5838" opacity="0.28"/>
   <rect x="282" y="196" width="8" height="12" rx="2" fill="#4A3828"/>
   <rect x="366" y="196" width="8" height="12" rx="2" fill="#4A3828"/>
 
   <!-- Coffee table -->
-  <rect x="146" y="187" width="106" height="9" rx="3" fill="#6B5240"/>
-  <rect x="146" y="187" width="106" height="3" rx="1" fill="#8A6A50" opacity="0.4"/>
-  <rect x="156" y="196" width="6" height="22" rx="2" fill="#5A4232"/>
-  <rect x="230" y="196" width="6" height="22" rx="2" fill="#5A4232"/>
+  <rect x="146" y="185" width="106" height="14" rx="3" fill="#6B5240"/>
+  <!-- Top highlight -->
+  <rect x="146" y="185" width="106" height="3" rx="1" fill="#8A6A50" opacity="0.4"/>
+  <!-- Front face depth -->
+  <rect x="146" y="195" width="106" height="4" fill="#3A2818" opacity="0.28"/>
+  <!-- Legs -->
+  <rect x="156" y="199" width="6" height="19" rx="2" fill="#5A4232"/>
+  <rect x="230" y="199" width="6" height="19" rx="2" fill="#5A4232"/>
+  <!-- Stretcher between legs -->
+  <rect x="158" y="207" width="74" height="4" rx="2" fill="#5A4232" opacity="0.55"/>
   <!-- Stacked magazines on table -->
   <rect x="166" y="183" width="30" height="5" rx="1" fill="#C8B898"/>
   <rect x="168" y="178" width="28" height="5" rx="1" fill="#B8A888"/>

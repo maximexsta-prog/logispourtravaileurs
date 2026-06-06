@@ -56,7 +56,15 @@
 
   <!-- Bed headboard -->
   <rect x="340" y="218" width="500" height="82" rx="10" fill="#5C4A35"/>
+  <!-- Top rail highlight -->
   <rect x="344" y="221" width="492" height="12" rx="5" fill="#7A6248" opacity="0.3"/>
+  <!-- Vertical panel grooves -->
+  <line x1="440" y1="224" x2="440" y2="298" stroke="#4A3828" stroke-width="2" opacity="0.24"/>
+  <line x1="540" y1="224" x2="540" y2="298" stroke="#4A3828" stroke-width="2" opacity="0.24"/>
+  <line x1="640" y1="224" x2="640" y2="298" stroke="#4A3828" stroke-width="2" opacity="0.24"/>
+  <line x1="740" y1="224" x2="740" y2="298" stroke="#4A3828" stroke-width="2" opacity="0.24"/>
+  <!-- Bottom rail -->
+  <line x1="342" y1="293" x2="838" y2="293" stroke="#4A3828" stroke-width="1.5" opacity="0.18"/>
 
   <!-- Bed base -->
   <rect x="350" y="278" width="480" height="162" rx="8" fill="#E8DDD0"/>
@@ -81,8 +89,13 @@
 
   <!-- Nightstand left -->
   <rect x="258" y="338" width="82" height="90" rx="6" fill="#6B5240"/>
+  <!-- Side face depth -->
+  <rect x="332" y="340" width="6" height="86" rx="2" fill="#3A2818" opacity="0.22"/>
   <line x1="258" y1="362" x2="340" y2="362" stroke="#5A4232" stroke-width="1.5"/>
+  <!-- Second drawer -->
+  <line x1="258" y1="386" x2="340" y2="386" stroke="#5A4232" stroke-width="1" opacity="0.6"/>
   <circle cx="299" cy="374" r="3" fill="#8A7050" opacity="0.7"/>
+  <circle cx="299" cy="396" r="3" fill="#8A7050" opacity="0.55"/>
   <rect x="258" y="338" width="82" height="6" rx="2" fill="#7A6050" opacity="0.35"/>
 
   <!-- Lamp left (trapezoid shade) -->
@@ -93,8 +106,13 @@
 
   <!-- Nightstand right -->
   <rect x="840" y="338" width="82" height="90" rx="6" fill="#6B5240"/>
+  <!-- Side face depth -->
+  <rect x="840" y="340" width="6" height="86" rx="2" fill="#3A2818" opacity="0.22"/>
   <line x1="840" y1="362" x2="922" y2="362" stroke="#5A4232" stroke-width="1.5"/>
+  <!-- Second drawer -->
+  <line x1="840" y1="386" x2="922" y2="386" stroke="#5A4232" stroke-width="1" opacity="0.6"/>
   <circle cx="881" cy="374" r="3" fill="#8A7050" opacity="0.7"/>
+  <circle cx="881" cy="396" r="3" fill="#8A7050" opacity="0.55"/>
   <rect x="840" y="338" width="82" height="6" rx="2" fill="#7A6050" opacity="0.35"/>
 
   <!-- Plant right — leaf paths -->

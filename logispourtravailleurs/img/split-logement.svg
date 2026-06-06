@@ -58,16 +58,31 @@
 
   <!-- Sofa base -->
   <rect x="74" y="316" width="474" height="156" rx="16" fill="#8B9E7A"/>
-  <!-- Sofa back -->
+  <!-- Sofa back panel (darker backdrop) -->
   <rect x="74" y="274" width="474" height="60" rx="12" fill="#7A8E6A"/>
+  <!-- Sofa back cushions (3, matching seat positions) -->
+  <rect x="86" y="276" width="142" height="56" rx="9" fill="#96AA84"/>
+  <rect x="240" y="276" width="142" height="56" rx="9" fill="#96AA84"/>
+  <rect x="394" y="276" width="134" height="56" rx="9" fill="#96AA84"/>
+  <!-- Back cushion dimples -->
+  <circle cx="157" cy="304" r="3" fill="#7A8E6A" opacity="0.42"/>
+  <circle cx="311" cy="304" r="3" fill="#7A8E6A" opacity="0.42"/>
+  <circle cx="461" cy="304" r="3" fill="#7A8E6A" opacity="0.42"/>
   <!-- Sofa arms -->
   <rect x="54" y="285" width="30" height="137" rx="8" fill="#7A8E6A"/>
+  <!-- Arm top surface (lighter) -->
+  <rect x="54" y="285" width="30" height="7" rx="4" fill="#9AB08A" opacity="0.55"/>
   <rect x="518" y="285" width="30" height="137" rx="8" fill="#7A8E6A"/>
-  <!-- Sofa cushions -->
+  <rect x="518" y="285" width="30" height="7" rx="4" fill="#9AB08A" opacity="0.55"/>
+  <!-- Sofa seat cushions -->
   <rect x="90" y="314" width="144" height="106" rx="10" fill="#96AA84"/>
   <rect x="244" y="314" width="144" height="106" rx="10" fill="#96AA84"/>
   <rect x="398" y="314" width="136" height="106" rx="10" fill="#96AA84"/>
-  <!-- Cushion center dimples -->
+  <!-- Seat cushion front face (depth strip) -->
+  <rect x="90" y="414" width="144" height="6" rx="0" fill="#7A8E6A" opacity="0.35"/>
+  <rect x="244" y="414" width="144" height="6" rx="0" fill="#7A8E6A" opacity="0.35"/>
+  <rect x="398" y="414" width="136" height="6" rx="0" fill="#7A8E6A" opacity="0.35"/>
+  <!-- Seat cushion dimples -->
   <circle cx="162" cy="355" r="4" fill="#7A8E6A" opacity="0.48"/>
   <circle cx="316" cy="355" r="4" fill="#7A8E6A" opacity="0.48"/>
   <circle cx="466" cy="355" r="4" fill="#7A8E6A" opacity="0.48"/>
@@ -82,10 +97,16 @@
   <line x1="335" y1="277" x2="335" y2="343" stroke="#C84A1A" stroke-width="1.5" opacity="0.28"/>
 
   <!-- Coffee table -->
-  <rect x="172" y="428" width="300" height="16" rx="5" fill="#5C4A35"/>
+  <rect x="172" y="428" width="300" height="22" rx="5" fill="#5C4A35"/>
+  <!-- Table top highlight -->
   <rect x="172" y="428" width="300" height="5" rx="2" fill="#8A6A50" opacity="0.35"/>
-  <rect x="196" y="444" width="12" height="32" rx="3" fill="#4A3828"/>
-  <rect x="440" y="444" width="12" height="32" rx="3" fill="#4A3828"/>
+  <!-- Table front face (depth) -->
+  <rect x="172" y="446" width="300" height="4" rx="0" fill="#3A2818" opacity="0.32"/>
+  <!-- Legs -->
+  <rect x="196" y="450" width="12" height="26" rx="3" fill="#4A3828"/>
+  <rect x="440" y="450" width="12" height="26" rx="3" fill="#4A3828"/>
+  <!-- Cross stretcher between legs -->
+  <rect x="202" y="462" width="244" height="5" rx="2" fill="#4A3828" opacity="0.55"/>
   <!-- Items on coffee table -->
   <rect x="200" y="420" width="62" height="9" rx="2" fill="#C8B898"/>
   <rect x="202" y="412" width="58" height="9" rx="2" fill="#B8A888"/>
