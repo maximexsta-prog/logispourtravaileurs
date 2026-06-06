@@ -13,6 +13,14 @@
       <stop offset="0%" stop-color="#90B8D0"/>
       <stop offset="100%" stop-color="#C0D8D4"/>
     </linearGradient>
+    <linearGradient id="sky-c" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4E7A9C"/>
+      <stop offset="50%" stop-color="#8AB4CA"/>
+      <stop offset="100%" stop-color="#C0D8E0"/>
+    </linearGradient>
+    <clipPath id="art-clip-c">
+      <rect x="157" y="37" width="78" height="50" rx="2"/>
+    </clipPath>
   </defs>
 
   <!-- Wall with gradient (no hard stripe) -->
@@ -90,13 +98,24 @@
   <!-- Leaf 3 — small front leaf -->
   <path d="M25 92 Q18 76 20 64 Q25 72 28 62 Q32 72 25 92Z" fill="#6A9A54" opacity="0.75"/>
 
-  <!-- Framed landscape picture on wall -->
+  <!-- Nature landscape painting on wall -->
   <rect x="152" y="32" width="88" height="60" rx="4" fill="#F0EAE0"/>
   <rect x="152" y="32" width="88" height="60" fill="none" stroke="#C8B898" stroke-width="2.5" rx="4"/>
-  <rect x="157" y="37" width="78" height="50" rx="2" fill="#C8DDD8" opacity="0.75"/>
-  <!-- Mountain scene -->
-  <polygon points="175,83 197,55 219,83" fill="#5A7848" opacity="0.75"/>
-  <polygon points="200,83 220,60 244,83" fill="#4A6840" opacity="0.85"/>
-  <!-- Snow cap -->
-  <polygon points="197,55 193,65 201,65" fill="white" opacity="0.8"/>
+  <g clip-path="url(#art-clip-c)">
+    <rect x="157" y="37" width="78" height="50" fill="url(#sky-c)"/>
+    <!-- Sun disc -->
+    <circle cx="225" cy="43" r="6" fill="#F8E070" opacity="0.68"/>
+    <!-- Distant mountains -->
+    <polygon points="157,65 168,51 180,59 192,46 206,57 220,49 235,56 235,67 157,67" fill="#9EB8CA" opacity="0.6"/>
+    <!-- Mid hills -->
+    <path d="M157 72 Q168 63 180 67 Q192 61 204 66 Q218 61 235 66 L235 74 L157 74 Z" fill="#6A8A6A"/>
+    <!-- Forest floor -->
+    <rect x="157" y="72" width="78" height="15" fill="#3A5A2E"/>
+    <!-- Pine trees — left -->
+    <polygon points="163,72 160,63 166,63" fill="#2A4428"/>
+    <polygon points="171,72 168,62 174,62" fill="#243C24"/>
+    <!-- Pine trees — right -->
+    <polygon points="225,72 222,64 228,64" fill="#2A4428"/>
+    <polygon points="232,72 229,63 235,63" fill="#243C24"/>
+  </g>
 </svg>

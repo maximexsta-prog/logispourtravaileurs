@@ -13,6 +13,14 @@
       <stop offset="0%" stop-color="#1A2830"/>
       <stop offset="100%" stop-color="#0E1C24"/>
     </linearGradient>
+    <linearGradient id="sky-m" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4E7A9C"/>
+      <stop offset="50%" stop-color="#8AB4CA"/>
+      <stop offset="100%" stop-color="#C0D8E0"/>
+    </linearGradient>
+    <clipPath id="art-clip-m">
+      <rect x="168" y="34" width="94" height="60" rx="3"/>
+    </clipPath>
   </defs>
 
   <!-- Wall -->
@@ -93,14 +101,24 @@
   <path d="M54 76 Q36 54 40 30 Q52 48 54 22 Q56 48 68 34 Q68 58 54 76Z" fill="#4E7A3C" opacity="0.85"/>
   <path d="M54 66 Q40 48 44 28 Q52 42 54 18 Q56 40 64 28 Q64 50 54 66Z" fill="#6A9A54" opacity="0.72"/>
 
-  <!-- Wall art above TV — geometric/minimal with brand colors -->
+  <!-- Nature landscape painting above TV -->
   <rect x="162" y="28" width="106" height="72" rx="5" fill="#F0EAE0"/>
   <rect x="162" y="28" width="106" height="72" fill="none" stroke="#C8B898" stroke-width="2.5" rx="5"/>
-  <rect x="168" y="34" width="94" height="60" rx="3" fill="#E8E0D8" opacity="0.8"/>
-  <!-- Abstract circles composition -->
-  <circle cx="215" cy="64" r="20" fill="none" stroke="#1E3A2F" stroke-width="2" opacity="0.22"/>
-  <circle cx="215" cy="64" r="12" fill="none" stroke="#1E3A2F" stroke-width="1.5" opacity="0.18"/>
-  <line x1="168" y1="64" x2="262" y2="64" stroke="#C8B898" stroke-width="1" opacity="0.45"/>
-  <line x1="215" y1="34" x2="215" y2="94" stroke="#C8B898" stroke-width="1" opacity="0.45"/>
-  <circle cx="215" cy="64" r="5" fill="#E8602A" opacity="0.55"/>
+  <g clip-path="url(#art-clip-m)">
+    <rect x="168" y="34" width="94" height="60" fill="url(#sky-m)"/>
+    <!-- Sun disc -->
+    <circle cx="248" cy="42" r="8" fill="#F8E070" opacity="0.68"/>
+    <!-- Distant mountains -->
+    <polygon points="168,68 182,52 196,61 210,46 224,57 242,48 262,57 262,70 168,70" fill="#9EB8CA" opacity="0.6"/>
+    <!-- Mid hills -->
+    <path d="M168 76 Q180 67 194 72 Q208 64 222 70 Q238 64 253 70 L262 73 L262 80 L168 80 Z" fill="#6A8A6A"/>
+    <!-- Forest floor -->
+    <rect x="168" y="76" width="94" height="18" fill="#3A5A2E"/>
+    <!-- Pine trees — left -->
+    <polygon points="176,76 173,66 179,66" fill="#2A4428"/>
+    <polygon points="185,76 181,63 189,63" fill="#243C24"/>
+    <!-- Pine trees — right -->
+    <polygon points="248,76 244,65 252,65" fill="#2A4428"/>
+    <polygon points="257,76 253,64 261,64" fill="#243C24"/>
+  </g>
 </svg>

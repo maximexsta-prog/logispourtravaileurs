@@ -13,6 +13,14 @@
       <stop offset="0%" stop-color="#8AAEC8"/>
       <stop offset="100%" stop-color="#B8D4CC"/>
     </linearGradient>
+    <linearGradient id="sky-art" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4E7A9C"/>
+      <stop offset="50%" stop-color="#8AB4CA"/>
+      <stop offset="100%" stop-color="#C0D8E0"/>
+    </linearGradient>
+    <clipPath id="art-clip">
+      <rect x="104" y="60" width="176" height="126" rx="3"/>
+    </clipPath>
   </defs>
 
   <!-- Wall with gradient -->
@@ -100,15 +108,32 @@
   <path d="M698 305 Q658 284 636 262 Q658 270 666 254 Q672 272 698 305Z" fill="#4E7A3C" opacity="0.72"/>
   <path d="M702 292 Q742 272 762 252 Q740 260 732 246 Q730 264 702 292Z" fill="#5A8A46" opacity="0.68"/>
 
-  <!-- Wall art (framed, upper left) -->
+  <!-- Nature landscape painting (framed, upper left) -->
   <rect x="96" y="52" width="192" height="142" rx="6" fill="#F0EAE0"/>
   <rect x="96" y="52" width="192" height="142" fill="none" stroke="#C8B898" stroke-width="3" rx="6"/>
-  <rect x="104" y="60" width="176" height="126" rx="3" fill="#E8E0D8" opacity="0.8"/>
-  <!-- Art: geometric brand-color composition -->
-  <circle cx="192" cy="123" r="40" fill="none" stroke="#1E3A2F" stroke-width="2.5" opacity="0.2"/>
-  <circle cx="192" cy="123" r="26" fill="#1E3A2F" opacity="0.07"/>
-  <path d="M152 123 Q172 94 192 84 Q212 94 232 123" fill="none" stroke="#C47858" stroke-width="2.5" opacity="0.38"/>
-  <circle cx="192" cy="123" r="7" fill="#E8602A" opacity="0.5"/>
+  <g clip-path="url(#art-clip)">
+    <rect x="104" y="60" width="176" height="126" fill="url(#sky-art)"/>
+    <!-- Sun disc -->
+    <circle cx="254" cy="78" r="14" fill="#F8E070" opacity="0.7"/>
+    <!-- Distant mountains (pale blue-grey) -->
+    <polygon points="104,130 132,90 158,110 180,80 206,100 230,82 258,102 280,86 280,132 104,132" fill="#9EB8CA" opacity="0.6"/>
+    <!-- Mid mountains (sage green) -->
+    <polygon points="104,146 122,112 144,128 164,104 186,120 208,108 232,122 256,106 280,116 280,148 104,148" fill="#6A8A6A"/>
+    <!-- Rolling hills -->
+    <path d="M104 158 Q128 142 154 150 Q176 140 200 148 Q224 139 248 147 Q264 140 280 148 L280 162 L104 162 Z" fill="#7A9A5C"/>
+    <!-- Forest floor -->
+    <rect x="104" y="158" width="176" height="28" fill="#3A5A2E"/>
+    <!-- Pine trees — left cluster -->
+    <polygon points="112,158 108,140 116,140" fill="#2A4428"/>
+    <polygon points="122,158 117,137 127,137" fill="#243C24"/>
+    <polygon points="133,158 129,144 137,144" fill="#344E30"/>
+    <!-- Pine trees — right cluster -->
+    <polygon points="250,158 246,142 254,142" fill="#2A4428"/>
+    <polygon points="261,158 257,140 265,140" fill="#243C24"/>
+    <polygon points="272,158 268,144 276,144" fill="#344E30"/>
+    <!-- Lone tree — centre -->
+    <polygon points="194,158 190,148 198,148" fill="#2A4428"/>
+  </g>
 
   <!-- Side table (left of sofa) -->
   <rect x="36" y="380" width="18" height="102" rx="3" fill="#6B5240"/>
