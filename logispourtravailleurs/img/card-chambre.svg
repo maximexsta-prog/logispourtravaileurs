@@ -1,41 +1,102 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
-  <rect width="400" height="250" fill="#E8E0D4"/>
+  <defs>
+    <linearGradient id="wall-ch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#CEC6BA"/>
+      <stop offset="55%" stop-color="#DDD5C9"/>
+      <stop offset="100%" stop-color="#E8E0D4"/>
+    </linearGradient>
+    <linearGradient id="floor-ch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B8956A"/>
+      <stop offset="100%" stop-color="#9E7248"/>
+    </linearGradient>
+    <linearGradient id="win-ch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#90B8D0"/>
+      <stop offset="100%" stop-color="#C0D8D4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wall with gradient (no hard stripe) -->
+  <rect width="400" height="185" fill="url(#wall-ch)"/>
+  <!-- Subtle dado rail -->
+  <line x1="0" y1="125" x2="400" y2="125" stroke="#C0B8AC" stroke-width="1.5" opacity="0.45"/>
+
   <!-- Floor -->
-  <rect x="0" y="185" width="400" height="65" fill="#B8956A"/>
-  <line x1="0" y1="198" x2="400" y2="198" stroke="#A07850" stroke-width="1" opacity="0.5"/>
-  <line x1="0" y1="215" x2="400" y2="215" stroke="#A07850" stroke-width="1" opacity="0.5"/>
-  <line x1="130" y1="185" x2="130" y2="250" stroke="#A07850" stroke-width="1" opacity="0.35"/>
-  <line x1="280" y1="185" x2="280" y2="250" stroke="#A07850" stroke-width="1" opacity="0.35"/>
-  <!-- Bed headboard -->
-  <rect x="60" y="100" width="280" height="50" rx="8" fill="#5C4A35"/>
+  <rect x="0" y="185" width="400" height="65" fill="url(#floor-ch)"/>
+  <line x1="0" y1="197" x2="400" y2="197" stroke="#9E7248" stroke-width="1" opacity="0.4"/>
+  <line x1="0" y1="214" x2="400" y2="214" stroke="#9E7248" stroke-width="1" opacity="0.35"/>
+  <line x1="130" y1="185" x2="130" y2="250" stroke="#9E7248" stroke-width="1" opacity="0.28"/>
+  <line x1="280" y1="185" x2="280" y2="250" stroke="#9E7248" stroke-width="1" opacity="0.28"/>
+
+  <!-- Window light cast on floor -->
+  <path d="M294 185 L386 185 L400 250 L268 250 Z" fill="#F0E8C8" opacity="0.09"/>
+
+  <!-- Bed shadow on floor -->
+  <ellipse cx="200" cy="204" rx="138" ry="7" fill="#3A2010" opacity="0.1"/>
+
+  <!-- Headboard -->
+  <rect x="58" y="96" width="284" height="54" rx="8" fill="#5C4A35"/>
+  <rect x="62" y="99" width="276" height="9" rx="4" fill="#7A6248" opacity="0.35"/>
+
   <!-- Bed base -->
-  <rect x="60" y="145" width="280" height="60" rx="6" fill="#D4C8B8"/>
+  <rect x="58" y="144" width="284" height="58" rx="6" fill="#D4C8B8"/>
+
   <!-- Pillows -->
-  <rect x="72" y="138" width="110" height="50" rx="10" fill="#F5F0E8"/>
-  <rect x="72" y="138" width="110" height="50" rx="10" fill="none" stroke="#D4C8B8" stroke-width="1.5"/>
-  <rect x="218" y="138" width="110" height="50" rx="10" fill="#F5F0E8"/>
-  <rect x="218" y="138" width="110" height="50" rx="10" fill="none" stroke="#D4C8B8" stroke-width="1.5"/>
+  <rect x="68" y="134" width="116" height="54" rx="10" fill="#F5F0E8"/>
+  <rect x="68" y="134" width="116" height="54" fill="none" stroke="#D4C8B8" stroke-width="1.5" rx="10"/>
+  <circle cx="126" cy="161" r="3" fill="#D4C8B8" opacity="0.6"/>
+  <rect x="216" y="134" width="116" height="54" rx="10" fill="#F5F0E8"/>
+  <rect x="216" y="134" width="116" height="54" fill="none" stroke="#D4C8B8" stroke-width="1.5" rx="10"/>
+  <circle cx="274" cy="161" r="3" fill="#D4C8B8" opacity="0.6"/>
+
   <!-- Duvet -->
-  <rect x="60" y="168" width="280" height="46" rx="6" fill="#EAE0D0"/>
-  <line x1="60" y1="182" x2="340" y2="182" stroke="#D4C8B8" stroke-width="1.5" opacity="0.6"/>
+  <rect x="58" y="164" width="284" height="48" rx="6" fill="#EAE0D0"/>
+  <line x1="58" y1="178" x2="342" y2="178" stroke="#D4C8B8" stroke-width="1.5" opacity="0.5"/>
+  <line x1="58" y1="192" x2="342" y2="192" stroke="#D4C8B8" stroke-width="1" opacity="0.3"/>
+
   <!-- Bed legs -->
-  <rect x="68" y="198" width="10" height="18" rx="3" fill="#4A3828"/>
-  <rect x="320" y="198" width="10" height="18" rx="3" fill="#4A3828"/>
+  <rect x="66" y="197" width="10" height="18" rx="3" fill="#4A3828"/>
+  <rect x="322" y="197" width="10" height="18" rx="3" fill="#4A3828"/>
+
   <!-- Nightstand -->
-  <rect x="10" y="145" width="44" height="55" rx="5" fill="#6B5240"/>
-  <rect x="15" y="158" width="34" height="22" rx="3" fill="#5A4232"/>
-  <!-- Lamp -->
-  <rect x="28" y="122" width="3" height="26" fill="#8A7A60"/>
-  <ellipse cx="29" cy="121" rx="16" ry="10" fill="#F0E0B0" opacity="0.9"/>
-  <!-- Window -->
-  <rect x="295" y="20" width="90" height="110" fill="#A8C4B8" rx="3"/>
-  <rect x="295" y="20" width="90" height="110" fill="none" stroke="#8A7A60" stroke-width="3" rx="3"/>
-  <line x1="340" y1="20" x2="340" y2="130" stroke="#8A7A60" stroke-width="2"/>
-  <line x1="295" y1="75" x2="385" y2="75" stroke="#8A7A60" stroke-width="2"/>
-  <!-- Small plant -->
-  <rect x="22" y="108" width="10" height="20" rx="3" fill="#7A6248"/>
-  <ellipse cx="18" cy="96" rx="14" ry="16" fill="#5A8A46"/>
-  <ellipse cx="30" cy="92" rx="11" ry="13" fill="#4E7A3C"/>
-  <!-- Wall color accent -->
-  <rect x="0" y="0" width="400" height="100" fill="#D8D0C4"/>
+  <rect x="8" y="142" width="44" height="56" rx="5" fill="#6B5240"/>
+  <line x1="8" y1="162" x2="52" y2="162" stroke="#5A4232" stroke-width="1.5"/>
+  <circle cx="30" cy="172" r="2.5" fill="#8A7050" opacity="0.7"/>
+  <rect x="8" y="142" width="44" height="5" rx="2" fill="#7A6050" opacity="0.35"/>
+
+  <!-- Lamp pole -->
+  <rect x="28" y="116" width="3" height="28" fill="#8A7A60"/>
+  <!-- Lamp shade (trapezoid) -->
+  <path d="M17 116 L43 116 L39 130 L21 130 Z" fill="#F0E0B0" opacity="0.92"/>
+  <path d="M17 116 L43 116 L39 130 L21 130 Z" fill="none" stroke="#C8A870" stroke-width="1.5"/>
+  <!-- Lamp glow on nightstand -->
+  <ellipse cx="30" cy="142" rx="18" ry="4" fill="#F8E880" opacity="0.16"/>
+
+  <!-- Window with sky gradient -->
+  <rect x="294" y="16" width="92" height="114" rx="3" fill="url(#win-ch)"/>
+  <rect x="294" y="16" width="92" height="114" fill="none" stroke="#8A7A60" stroke-width="3" rx="3"/>
+  <line x1="340" y1="16" x2="340" y2="130" stroke="#8A7A60" stroke-width="2"/>
+  <line x1="294" y1="73" x2="386" y2="73" stroke="#8A7A60" stroke-width="2"/>
+  <!-- Window reflection -->
+  <line x1="300" y1="22" x2="314" y2="40" stroke="white" stroke-width="2.5" opacity="0.32" stroke-linecap="round"/>
+  <!-- Window sill -->
+  <rect x="290" y="128" width="100" height="6" rx="2" fill="#C8B898"/>
+
+  <!-- Plant using leaf paths -->
+  <rect x="20" y="106" width="10" height="22" rx="3" fill="#7A6248"/>
+  <!-- Leaf 1 — wide, arches left then back -->
+  <path d="M25 106 Q4 88 8 66 Q24 80 25 58 Q26 80 42 68 Q46 90 25 106Z" fill="#5A8A46"/>
+  <!-- Leaf 2 — slightly narrower, layered behind -->
+  <path d="M25 98 Q12 80 16 60 Q25 74 26 54 Q28 68 36 58 Q40 78 25 98Z" fill="#4E7A3C" opacity="0.85"/>
+  <!-- Leaf 3 — small front leaf -->
+  <path d="M25 92 Q18 76 20 64 Q25 72 28 62 Q32 72 25 92Z" fill="#6A9A54" opacity="0.75"/>
+
+  <!-- Framed landscape picture on wall -->
+  <rect x="152" y="32" width="88" height="60" rx="4" fill="#F0EAE0"/>
+  <rect x="152" y="32" width="88" height="60" fill="none" stroke="#C8B898" stroke-width="2.5" rx="4"/>
+  <rect x="157" y="37" width="78" height="50" rx="2" fill="#C8DDD8" opacity="0.75"/>
+  <!-- Mountain scene -->
+  <polygon points="175,83 197,55 219,83" fill="#5A7848" opacity="0.75"/>
+  <polygon points="200,83 220,60 244,83" fill="#4A6840" opacity="0.85"/>
+  <!-- Snow cap -->
+  <polygon points="197,55 193,65 201,65" fill="white" opacity="0.8"/>
 </svg>

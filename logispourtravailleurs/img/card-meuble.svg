@@ -1,54 +1,106 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
-  <rect width="400" height="250" fill="#E0D8CC"/>
+  <defs>
+    <linearGradient id="wall-m" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8C0B4"/>
+      <stop offset="55%" stop-color="#D4CCB8"/>
+      <stop offset="100%" stop-color="#E0D8CC"/>
+    </linearGradient>
+    <linearGradient id="floor-m" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B89068"/>
+      <stop offset="100%" stop-color="#96724E"/>
+    </linearGradient>
+    <linearGradient id="tvscreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A2830"/>
+      <stop offset="100%" stop-color="#0E1C24"/>
+    </linearGradient>
+  </defs>
+
   <!-- Wall -->
-  <rect width="400" height="195" fill="#D8D0C4"/>
+  <rect width="400" height="195" fill="url(#wall-m)"/>
   <!-- Floor -->
-  <rect x="0" y="195" width="400" height="55" fill="#B89068"/>
-  <line x1="0" y1="210" x2="400" y2="210" stroke="#9A7850" stroke-width="1" opacity="0.5"/>
-  <line x1="100" y1="195" x2="100" y2="250" stroke="#9A7850" stroke-width="1" opacity="0.3"/>
-  <line x1="260" y1="195" x2="260" y2="250" stroke="#9A7850" stroke-width="1" opacity="0.3"/>
-  <!-- TV unit/console -->
-  <rect x="100" y="130" width="200" height="12" rx="3" fill="#5C4A35"/>
-  <rect x="130" y="142" width="140" height="55" rx="4" fill="#4A3828"/>
+  <rect x="0" y="195" width="400" height="55" fill="url(#floor-m)"/>
+  <line x1="0" y1="210" x2="400" y2="210" stroke="#96724E" stroke-width="1" opacity="0.45"/>
+  <line x1="100" y1="195" x2="100" y2="250" stroke="#96724E" stroke-width="1" opacity="0.28"/>
+  <line x1="260" y1="195" x2="260" y2="250" stroke="#96724E" stroke-width="1" opacity="0.28"/>
+
+  <!-- TV console -->
+  <rect x="100" y="128" width="200" height="12" rx="3" fill="#5C4A35"/>
+  <!-- Console top highlight -->
+  <rect x="100" y="128" width="200" height="4" rx="1" fill="#7A6050" opacity="0.35"/>
+  <rect x="130" y="140" width="140" height="56" rx="4" fill="#4A3828"/>
   <!-- TV screen -->
-  <rect x="140" y="148" width="120" height="44" rx="3" fill="#1A2830"/>
-  <rect x="140" y="148" width="120" height="44" rx="3" fill="none" stroke="#2A3840" stroke-width="1.5"/>
+  <rect x="140" y="146" width="120" height="46" rx="3" fill="url(#tvscreen)"/>
+  <rect x="140" y="146" width="120" height="46" fill="none" stroke="#2A3840" stroke-width="1.5" rx="3"/>
+  <!-- Screen subtle reflection -->
+  <line x1="144" y1="150" x2="158" y2="166" stroke="#4A6878" stroke-width="3" opacity="0.22" stroke-linecap="round"/>
   <!-- TV stand legs -->
-  <rect x="148" y="196" width="8" height="14" rx="2" fill="#3A2E22"/>
-  <rect x="240" y="196" width="8" height="14" rx="2" fill="#3A2E22"/>
+  <rect x="148" y="195" width="8" height="14" rx="2" fill="#3A2E22"/>
+  <rect x="240" y="195" width="8" height="14" rx="2" fill="#3A2E22"/>
+
+  <!-- Sofa shadow -->
+  <ellipse cx="68" cy="213" rx="56" ry="5" fill="#1E3A2F" opacity="0.1"/>
+
   <!-- Sofa -->
-  <rect x="20" y="148" width="100" height="58" rx="10" fill="#8B9E7A"/>
-  <rect x="20" y="138" width="100" height="20" rx="7" fill="#7A8E6A"/>
-  <rect x="10" y="145" width="18" height="50" rx="6" fill="#7A8E6A"/>
-  <rect x="110" y="145" width="18" height="50" rx="6" fill="#7A8E6A"/>
-  <!-- Sofa cushions small -->
-  <rect x="28" y="148" width="40" height="40" rx="7" fill="#96AA84"/>
-  <rect x="75" y="148" width="40" height="40" rx="7" fill="#96AA84"/>
+  <rect x="14" y="146" width="106" height="58" rx="10" fill="#8B9E7A"/>
+  <rect x="14" y="136" width="106" height="22" rx="7" fill="#7A8E6A"/>
+  <rect x="8" y="143" width="18" height="52" rx="6" fill="#7A8E6A"/>
+  <rect x="108" y="143" width="18" height="52" rx="6" fill="#7A8E6A"/>
+  <!-- Sofa cushions -->
+  <rect x="22" y="146" width="42" height="42" rx="7" fill="#96AA84"/>
+  <rect x="70" y="146" width="42" height="42" rx="7" fill="#96AA84"/>
+  <!-- Cushion stitch lines -->
+  <line x1="22" y1="165" x2="64" y2="165" stroke="#7A8E6A" stroke-width="1" opacity="0.38"/>
+  <line x1="70" y1="165" x2="112" y2="165" stroke="#7A8E6A" stroke-width="1" opacity="0.38"/>
   <!-- Sofa legs -->
-  <rect x="22" y="198" width="8" height="12" rx="2" fill="#4A3828"/>
-  <rect x="104" y="198" width="8" height="12" rx="2" fill="#4A3828"/>
-  <!-- Armchair right -->
-  <rect x="280" y="152" width="100" height="54" rx="10" fill="#C47858"/>
-  <rect x="280" y="140" width="100" height="20" rx="7" fill="#B06848"/>
-  <rect x="270" y="148" width="18" height="46" rx="6" fill="#B06848"/>
-  <rect x="372" y="148" width="18" height="46" rx="6" fill="#B06848"/>
-  <rect x="286" y="152" width="88" height="40" rx="8" fill="#CE8868"/>
-  <rect x="282" y="198" width="8" height="12" rx="2" fill="#4A3828"/>
-  <rect x="364" y="198" width="8" height="12" rx="2" fill="#4A3828"/>
+  <rect x="18" y="196" width="8" height="12" rx="2" fill="#4A3828"/>
+  <rect x="100" y="196" width="8" height="12" rx="2" fill="#4A3828"/>
+
+  <!-- Throw pillow on sofa back -->
+  <rect x="50" y="136" width="30" height="30" rx="5" fill="#E8602A" opacity="0.88"/>
+  <line x1="50" y1="151" x2="80" y2="151" stroke="#C84A1A" stroke-width="1" opacity="0.28"/>
+  <line x1="65" y1="136" x2="65" y2="166" stroke="#C84A1A" stroke-width="1" opacity="0.28"/>
+
+  <!-- Armchair shadow -->
+  <ellipse cx="330" cy="213" rx="52" ry="5" fill="#1E3A2F" opacity="0.1"/>
+
+  <!-- Armchair (right) -->
+  <rect x="278" y="150" width="104" height="54" rx="10" fill="#C47858"/>
+  <rect x="278" y="138" width="104" height="22" rx="7" fill="#B06848"/>
+  <rect x="268" y="146" width="18" height="48" rx="6" fill="#B06848"/>
+  <rect x="374" y="146" width="18" height="48" rx="6" fill="#B06848"/>
+  <!-- Seat cushion highlight -->
+  <rect x="284" y="150" width="92" height="42" rx="8" fill="#CE8868" opacity="0.65"/>
+  <rect x="282" y="196" width="8" height="12" rx="2" fill="#4A3828"/>
+  <rect x="366" y="196" width="8" height="12" rx="2" fill="#4A3828"/>
+
   <!-- Coffee table -->
-  <rect x="148" y="190" width="100" height="8" rx="3" fill="#6B5240"/>
-  <rect x="158" y="198" width="6" height="20" rx="2" fill="#5A4232"/>
-  <rect x="228" y="198" width="6" height="20" rx="2" fill="#5A4232"/>
-  <!-- Plant -->
-  <rect x="50" y="80" width="14" height="55" rx="3" fill="#7A6248"/>
-  <ellipse cx="38" cy="62" rx="24" ry="28" fill="#5A8A46"/>
-  <ellipse cx="58" cy="55" rx="20" ry="24" fill="#4E7A3C"/>
-  <ellipse cx="44" cy="52" rx="16" ry="20" fill="#6A9A54"/>
-  <!-- Throw pillow on sofa -->
-  <rect x="52" y="140" width="28" height="28" rx="5" fill="#E8602A" opacity="0.85"/>
-  <!-- Wall art -->
-  <rect x="170" y="30" width="100" height="70" rx="5" fill="#F0EAE0"/>
-  <rect x="170" y="30" width="100" height="70" rx="5" fill="none" stroke="#C8B898" stroke-width="2.5"/>
-  <rect x="180" y="40" width="80" height="50" rx="3" fill="#C4D4C0" opacity="0.8"/>
-  <ellipse cx="220" cy="65" rx="25" ry="18" fill="#8B9E7A" opacity="0.6"/>
+  <rect x="146" y="187" width="106" height="9" rx="3" fill="#6B5240"/>
+  <rect x="146" y="187" width="106" height="3" rx="1" fill="#8A6A50" opacity="0.4"/>
+  <rect x="156" y="196" width="6" height="22" rx="2" fill="#5A4232"/>
+  <rect x="230" y="196" width="6" height="22" rx="2" fill="#5A4232"/>
+  <!-- Stacked magazines on table -->
+  <rect x="166" y="183" width="30" height="5" rx="1" fill="#C8B898"/>
+  <rect x="168" y="178" width="28" height="5" rx="1" fill="#B8A888"/>
+  <!-- Small cup -->
+  <rect x="208" y="181" width="14" height="7" rx="2" fill="#D4C8B8"/>
+
+  <!-- Plant (left, tall) — leaf paths -->
+  <!-- Pot -->
+  <rect x="47" y="86" width="14" height="44" rx="3" fill="#7A6248"/>
+  <rect x="44" y="126" width="20" height="8" rx="3" fill="#6B5240"/>
+  <!-- Leaves -->
+  <path d="M54 86 Q32 62 36 36 Q50 54 54 26 Q58 54 76 38 Q72 64 54 86Z" fill="#5A8A46"/>
+  <path d="M54 76 Q36 54 40 30 Q52 48 54 22 Q56 48 68 34 Q68 58 54 76Z" fill="#4E7A3C" opacity="0.85"/>
+  <path d="M54 66 Q40 48 44 28 Q52 42 54 18 Q56 40 64 28 Q64 50 54 66Z" fill="#6A9A54" opacity="0.72"/>
+
+  <!-- Wall art above TV — geometric/minimal with brand colors -->
+  <rect x="162" y="28" width="106" height="72" rx="5" fill="#F0EAE0"/>
+  <rect x="162" y="28" width="106" height="72" fill="none" stroke="#C8B898" stroke-width="2.5" rx="5"/>
+  <rect x="168" y="34" width="94" height="60" rx="3" fill="#E8E0D8" opacity="0.8"/>
+  <!-- Abstract circles composition -->
+  <circle cx="215" cy="64" r="20" fill="none" stroke="#1E3A2F" stroke-width="2" opacity="0.22"/>
+  <circle cx="215" cy="64" r="12" fill="none" stroke="#1E3A2F" stroke-width="1.5" opacity="0.18"/>
+  <line x1="168" y1="64" x2="262" y2="64" stroke="#C8B898" stroke-width="1" opacity="0.45"/>
+  <line x1="215" y1="34" x2="215" y2="94" stroke="#C8B898" stroke-width="1" opacity="0.45"/>
+  <circle cx="215" cy="64" r="5" fill="#E8602A" opacity="0.55"/>
 </svg>
