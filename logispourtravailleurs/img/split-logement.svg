@@ -1,215 +1,245 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
   <defs>
     <linearGradient id="wall-l" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#CCC4B8"/>
-      <stop offset="60%" stop-color="#D8D0C4"/>
-      <stop offset="100%" stop-color="#E8E0D4"/>
+      <stop offset="0%" stop-color="#EBE5DA"/>
+      <stop offset="50%" stop-color="#E2DCD0"/>
+      <stop offset="100%" stop-color="#D8D2C6"/>
     </linearGradient>
     <linearGradient id="floor-l" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#B8956A"/>
-      <stop offset="100%" stop-color="#987248"/>
+      <stop offset="0%" stop-color="#C09262"/>
+      <stop offset="100%" stop-color="#9A7240"/>
     </linearGradient>
     <linearGradient id="win-l" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#8AAEC8"/>
-      <stop offset="100%" stop-color="#B8D4CC"/>
+      <stop offset="0%" stop-color="#6A9EC2"/>
+      <stop offset="60%" stop-color="#96BDD6"/>
+      <stop offset="100%" stop-color="#BED4E2"/>
     </linearGradient>
     <linearGradient id="sky-art" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#4E7A9C"/>
       <stop offset="50%" stop-color="#8AB4CA"/>
       <stop offset="100%" stop-color="#C0D8E0"/>
     </linearGradient>
+    <radialGradient id="lamp-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F8E880" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F8E880" stop-opacity="0"/>
+    </radialGradient>
     <clipPath id="art-clip">
-      <rect x="104" y="60" width="176" height="126" rx="3"/>
+      <rect x="66" y="50" width="180" height="126" rx="2"/>
     </clipPath>
   </defs>
 
-  <!-- Wall with gradient -->
+  <!-- Wall background -->
   <rect width="800" height="600" fill="url(#wall-l)"/>
-  <!-- Subtle dado rail line -->
-  <line x1="0" y1="290" x2="800" y2="290" stroke="#C0B8AC" stroke-width="1.5" opacity="0.35"/>
+  <!-- Dado lower panel tint -->
+  <rect x="0" y="274" width="800" height="178" fill="#C0B8B0" opacity="0.1"/>
+  <!-- Dado rail top moulding -->
+  <rect x="0" y="270" width="800" height="5" fill="#C2BAB0" opacity="0.58"/>
+  <rect x="0" y="274" width="800" height="1.5" fill="#AEA498" opacity="0.32"/>
 
-  <!-- Baseboard molding (wall-floor junction) -->
-  <rect x="0" y="452" width="800" height="8" fill="#C8C0B0" opacity="0.5"/>
-  <rect x="0" y="458" width="800" height="2" fill="#B0A898" opacity="0.3"/>
-  <!-- Floor -->
-  <rect x="0" y="460" width="800" height="140" fill="url(#floor-l)"/>
-  <!-- Floor planks -->
-  <line x1="0" y1="475" x2="800" y2="475" stroke="#987248" stroke-width="1.5" opacity="0.42"/>
-  <line x1="0" y1="492" x2="800" y2="492" stroke="#987248" stroke-width="1.5" opacity="0.36"/>
-  <line x1="0" y1="510" x2="800" y2="510" stroke="#987248" stroke-width="1.5" opacity="0.3"/>
-  <line x1="0" y1="530" x2="800" y2="530" stroke="#987248" stroke-width="1.2" opacity="0.25"/>
-  <!-- Plank vertical joints -->
-  <line x1="150" y1="460" x2="150" y2="600" stroke="#987248" stroke-width="1" opacity="0.26"/>
-  <line x1="350" y1="460" x2="350" y2="600" stroke="#987248" stroke-width="1" opacity="0.26"/>
-  <line x1="550" y1="460" x2="550" y2="600" stroke="#987248" stroke-width="1" opacity="0.26"/>
-  <line x1="720" y1="460" x2="720" y2="600" stroke="#987248" stroke-width="1" opacity="0.26"/>
-
-  <!-- Window with sky gradient -->
-  <rect x="554" y="36" width="210" height="310" rx="4" fill="url(#win-l)"/>
-  <rect x="554" y="36" width="210" height="310" fill="none" stroke="#9A8A72" stroke-width="5" rx="4"/>
-  <line x1="659" y1="36" x2="659" y2="346" stroke="#9A8A72" stroke-width="3.5"/>
-  <line x1="554" y1="191" x2="764" y2="191" stroke="#9A8A72" stroke-width="3.5"/>
-  <!-- Window reflection -->
-  <line x1="562" y1="44" x2="584" y2="76" stroke="white" stroke-width="3" opacity="0.26" stroke-linecap="round"/>
+  <!-- Large window (right wall) -->
+  <rect x="548" y="26" width="224" height="312" rx="4" fill="url(#win-l)"/>
+  <rect x="548" y="26" width="224" height="312" fill="none" stroke="#9A8A70" stroke-width="5" rx="4"/>
+  <line x1="660" y1="26" x2="660" y2="338" stroke="#9A8A70" stroke-width="3.5"/>
+  <line x1="548" y1="182" x2="772" y2="182" stroke="#9A8A70" stroke-width="3.5"/>
+  <line x1="548" y1="104" x2="660" y2="104" stroke="#9A8A70" stroke-width="1.5" opacity="0.36"/>
+  <line x1="660" y1="104" x2="772" y2="104" stroke="#9A8A70" stroke-width="1.5" opacity="0.36"/>
+  <!-- Glass reflection -->
+  <line x1="556" y1="34" x2="582" y2="74" stroke="white" stroke-width="3" opacity="0.28" stroke-linecap="round"/>
+  <!-- Curtain rod -->
+  <rect x="534" y="12" width="252" height="8" rx="4" fill="#9A8A70"/>
+  <circle cx="534" cy="16" r="6" fill="#8A7A60"/>
+  <circle cx="786" cy="16" r="6" fill="#8A7A60"/>
+  <!-- Left curtain drape -->
+  <path d="M534 20 Q550 170 544 338 L556 338 L560 20 Z" fill="#8B9E7A" opacity="0.88"/>
+  <!-- Right curtain drape -->
+  <path d="M772 20 Q756 170 762 338 L776 338 L786 20 Z" fill="#8B9E7A" opacity="0.88"/>
   <!-- Window sill -->
-  <rect x="548" y="342" width="222" height="10" rx="3" fill="#C8B898"/>
-  <!-- Window light on floor -->
-  <path d="M554 460 L764 460 L800 600 L500 600 Z" fill="#F0E8C0" opacity="0.06"/>
+  <rect x="540" y="334" width="236" height="12" rx="3" fill="#C8B898"/>
+  <rect x="540" y="334" width="236" height="5" rx="2" fill="#D8C8A8" opacity="0.38"/>
+  <!-- Window light pool on floor -->
+  <path d="M548 452 L772 452 L800 600 L502 600 Z" fill="#F0E8C0" opacity="0.055"/>
 
-  <!-- Sofa shadow on floor -->
-  <ellipse cx="310" cy="474" rx="240" ry="12" fill="#1E3A2F" opacity="0.16"/>
-
-  <!-- Sofa base (brand green-dark) -->
-  <rect x="74" y="316" width="474" height="156" rx="16" fill="#1E3A2F"/>
-  <!-- Front apron zone (slightly lighter to read as a separate panel) -->
-  <rect x="90" y="422" width="456" height="44" rx="0" fill="#243F34" opacity="0.55"/>
-  <!-- Sofa back panel (deep, darker than base) -->
-  <rect x="74" y="274" width="474" height="60" rx="12" fill="#152820"/>
-  <!-- Sofa back cushions (brand green-mid) -->
-  <rect x="86" y="276" width="142" height="56" rx="9" fill="#2D5543"/>
-  <rect x="240" y="276" width="142" height="56" rx="9" fill="#2D5543"/>
-  <rect x="394" y="276" width="134" height="56" rx="9" fill="#2D5543"/>
-  <!-- Back cushion piping seams (outlines) -->
-  <rect x="86" y="276" width="142" height="56" rx="9" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
-  <rect x="240" y="276" width="142" height="56" rx="9" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
-  <rect x="394" y="276" width="134" height="56" rx="9" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
-  <!-- Back cushion top highlights (puffiness) -->
-  <rect x="86" y="276" width="142" height="20" rx="9" fill="#3A6A52" opacity="0.32"/>
-  <rect x="240" y="276" width="142" height="20" rx="9" fill="#3A6A52" opacity="0.32"/>
-  <rect x="394" y="276" width="134" height="20" rx="9" fill="#3A6A52" opacity="0.32"/>
-  <!-- Back cushion dimples -->
-  <circle cx="157" cy="304" r="3" fill="#0C1E16" opacity="0.6"/>
-  <circle cx="311" cy="304" r="3" fill="#0C1E16" opacity="0.6"/>
-  <circle cx="461" cy="304" r="3" fill="#0C1E16" opacity="0.6"/>
-  <!-- Sofa arms (deep, same as back panel) -->
-  <rect x="54" y="285" width="30" height="137" rx="8" fill="#152820"/>
-  <!-- Arm top surface (rolled-arm highlight, taller) -->
-  <rect x="54" y="285" width="30" height="14" rx="6" fill="#3A6A52" opacity="0.58"/>
-  <rect x="518" y="285" width="30" height="137" rx="8" fill="#152820"/>
-  <rect x="518" y="285" width="30" height="14" rx="6" fill="#3A6A52" opacity="0.58"/>
-  <!-- Sofa seat cushions (brand green-mid) -->
-  <rect x="90" y="314" width="144" height="106" rx="10" fill="#2D5543"/>
-  <rect x="244" y="314" width="144" height="106" rx="10" fill="#2D5543"/>
-  <rect x="398" y="314" width="136" height="106" rx="10" fill="#2D5543"/>
-  <!-- Seat cushion piping seams -->
-  <rect x="90" y="314" width="144" height="106" rx="10" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
-  <rect x="244" y="314" width="144" height="106" rx="10" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
-  <rect x="398" y="314" width="136" height="106" rx="10" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
-  <!-- Seat cushion top highlights (puffiness) -->
-  <rect x="90" y="314" width="144" height="36" rx="10" fill="#3A6A52" opacity="0.32"/>
-  <rect x="244" y="314" width="144" height="36" rx="10" fill="#3A6A52" opacity="0.32"/>
-  <rect x="398" y="314" width="136" height="36" rx="10" fill="#3A6A52" opacity="0.32"/>
-  <!-- Seat cushion front face (depth strip) -->
-  <rect x="90" y="414" width="144" height="6" rx="0" fill="#091410" opacity="0.5"/>
-  <rect x="244" y="414" width="144" height="6" rx="0" fill="#091410" opacity="0.5"/>
-  <rect x="398" y="414" width="136" height="6" rx="0" fill="#091410" opacity="0.5"/>
-  <!-- Seat cushion dimples -->
-  <circle cx="162" cy="355" r="4" fill="#0C1E16" opacity="0.6"/>
-  <circle cx="316" cy="355" r="4" fill="#0C1E16" opacity="0.6"/>
-  <circle cx="466" cy="355" r="4" fill="#0C1E16" opacity="0.6"/>
-  <!-- Sofa legs (walnut brown) -->
-  <rect x="88" y="458" width="14" height="22" rx="3" fill="#5A4A35"/>
-  <rect x="256" y="458" width="14" height="22" rx="3" fill="#5A4A35"/>
-  <rect x="484" y="458" width="14" height="22" rx="3" fill="#5A4A35"/>
-
-  <!-- Throw pillow on sofa -->
-  <rect x="302" y="277" width="66" height="66" rx="9" fill="#E8602A" opacity="0.86"/>
-  <line x1="302" y1="310" x2="368" y2="310" stroke="#C84A1A" stroke-width="1.5" opacity="0.28"/>
-  <line x1="335" y1="277" x2="335" y2="343" stroke="#C84A1A" stroke-width="1.5" opacity="0.28"/>
-
-  <!-- Coffee table -->
-  <rect x="172" y="428" width="300" height="22" rx="5" fill="#5C4A35"/>
-  <!-- Table top highlight -->
-  <rect x="172" y="428" width="300" height="5" rx="2" fill="#8A6A50" opacity="0.35"/>
-  <!-- Table front face (depth) -->
-  <rect x="172" y="446" width="300" height="4" rx="0" fill="#3A2818" opacity="0.32"/>
-  <!-- Legs -->
-  <rect x="196" y="450" width="12" height="26" rx="3" fill="#4A3828"/>
-  <rect x="440" y="450" width="12" height="26" rx="3" fill="#4A3828"/>
-  <!-- Cross stretcher between legs -->
-  <rect x="202" y="462" width="244" height="5" rx="2" fill="#4A3828" opacity="0.55"/>
-  <!-- Items on coffee table -->
-  <rect x="200" y="420" width="62" height="9" rx="2" fill="#C8B898"/>
-  <rect x="202" y="412" width="58" height="9" rx="2" fill="#B8A888"/>
-  <rect x="308" y="414" width="20" height="15" rx="3" fill="#D4C8B8"/>
-  <rect x="306" y="410" width="24" height="6" rx="2" fill="#C8B898"/>
-
-  <!-- Rug under coffee table -->
-  <ellipse cx="322" cy="470" rx="210" ry="30" fill="#C47858" opacity="0.38"/>
-  <ellipse cx="322" cy="470" rx="196" ry="26" fill="none" stroke="#B06848" stroke-width="2.5" opacity="0.3"/>
-  <ellipse cx="322" cy="470" rx="180" ry="21" fill="none" stroke="#D48870" stroke-width="1" opacity="0.18"/>
-
-  <!-- Large plant (right) — leaf paths for tropical feel -->
-  <!-- Stem above pot -->
-  <rect x="697" y="358" width="6" height="56" rx="2" fill="#5A4A2E"/>
-  <!-- Pot body (tapered ceramic — wider at rim, narrower at base) -->
-  <path d="M678 460 L671 414 L729 414 L722 460 Z" fill="#8B7A5A"/>
-  <!-- Pot left-face highlight -->
-  <path d="M678 460 L671 414 L683 414 L690 460 Z" fill="#A89A72" opacity="0.38"/>
-  <!-- Pot rim (top lip, slightly wider) -->
-  <rect x="666" y="407" width="68" height="10" rx="4" fill="#9A8A6A"/>
-  <!-- Rim top highlight -->
-  <rect x="666" y="407" width="68" height="4" rx="4" fill="#BAA882" opacity="0.38"/>
-  <!-- Soil surface -->
-  <ellipse cx="700" cy="413" rx="26" ry="5" fill="#3A2E18" opacity="0.82"/>
-  <!-- Saucer -->
-  <ellipse cx="700" cy="463" rx="46" ry="7" fill="#A89878"/>
-  <ellipse cx="700" cy="463" rx="46" ry="7" fill="none" stroke="#8A7A58" stroke-width="1.5"/>
-  <!-- Saucer inner ring -->
-  <ellipse cx="700" cy="462" rx="38" ry="5" fill="none" stroke="#9A8A68" stroke-width="1" opacity="0.45"/>
-  <!-- Leaves (3 directional, layered) -->
-  <path d="M700 360 Q668 320 672 278 Q690 306 700 262 Q710 306 730 280 Q726 324 700 360Z" fill="#4E7A3C"/>
-  <path d="M700 346 Q672 308 678 270 Q694 296 700 254 Q706 296 720 272 Q720 312 700 346Z" fill="#5A8A46" opacity="0.85"/>
-  <path d="M700 330 Q678 296 682 260 Q694 284 700 244 Q706 284 718 262 Q716 298 700 330Z" fill="#3E6A2E" opacity="0.78"/>
-  <!-- Side stems for fullness -->
-  <path d="M698 305 Q658 284 636 262 Q658 270 666 254 Q672 272 698 305Z" fill="#4E7A3C" opacity="0.72"/>
-  <path d="M702 292 Q742 272 762 252 Q740 260 732 246 Q730 264 702 292Z" fill="#5A8A46" opacity="0.68"/>
-
-  <!-- Nature landscape painting (framed, upper left) -->
-  <rect x="96" y="52" width="192" height="142" rx="6" fill="#F0EAE0"/>
-  <rect x="96" y="52" width="192" height="142" fill="none" stroke="#C8B898" stroke-width="3" rx="6"/>
+  <!-- Nature landscape painting (upper left) -->
+  <!-- Outer frame mat -->
+  <rect x="56" y="40" width="202" height="156" rx="7" fill="#F2EDE4"/>
+  <rect x="56" y="40" width="202" height="156" fill="none" stroke="#BEA47E" stroke-width="3.5" rx="7"/>
+  <!-- Inner frame line -->
+  <rect x="62" y="46" width="190" height="144" fill="none" stroke="#D6C4A6" stroke-width="1.5" rx="4"/>
   <g clip-path="url(#art-clip)">
-    <rect x="104" y="60" width="176" height="126" fill="url(#sky-art)"/>
-    <!-- Sun disc -->
-    <circle cx="254" cy="78" r="14" fill="#F8E070" opacity="0.7"/>
-    <!-- Distant mountains (pale blue-grey) -->
-    <polygon points="104,130 132,90 158,110 180,80 206,100 230,82 258,102 280,86 280,132 104,132" fill="#9EB8CA" opacity="0.6"/>
-    <!-- Mid mountains (sage green) -->
-    <polygon points="104,146 122,112 144,128 164,104 186,120 208,108 232,122 256,106 280,116 280,148 104,148" fill="#6A8A6A"/>
-    <!-- Rolling hills -->
-    <path d="M104 158 Q128 142 154 150 Q176 140 200 148 Q224 139 248 147 Q264 140 280 148 L280 162 L104 162 Z" fill="#7A9A5C"/>
-    <!-- Forest floor -->
-    <rect x="104" y="158" width="176" height="28" fill="#3A5A2E"/>
-    <!-- Pine trees — left cluster -->
-    <polygon points="112,158 108,140 116,140" fill="#2A4428"/>
-    <polygon points="122,158 117,137 127,137" fill="#243C24"/>
-    <polygon points="133,158 129,144 137,144" fill="#344E30"/>
-    <!-- Pine trees — right cluster -->
-    <polygon points="250,158 246,142 254,142" fill="#2A4428"/>
-    <polygon points="261,158 257,140 265,140" fill="#243C24"/>
-    <polygon points="272,158 268,144 276,144" fill="#344E30"/>
-    <!-- Lone tree — centre -->
-    <polygon points="194,158 190,148 198,148" fill="#2A4428"/>
+    <rect x="66" y="50" width="180" height="126" fill="url(#sky-art)"/>
+    <circle cx="226" cy="68" r="13" fill="#F8E070" opacity="0.7"/>
+    <polygon points="66,118 94,82 120,100 144,72 168,92 192,76 218,94 242,78 246,120 66,120" fill="#9EB8CA" opacity="0.58"/>
+    <polygon points="66,134 84,108 108,122 130,100 154,116 176,102 200,118 224,106 246,114 246,136 66,136" fill="#6A8A6A"/>
+    <path d="M66 146 Q90 136 114 142 Q136 134 160 140 Q184 133 208 139 Q228 134 246 139 L246 150 L66 150 Z" fill="#7A9A5C"/>
+    <rect x="66" y="148" width="180" height="28" fill="#3A5A2E"/>
+    <polygon points="76,148 72,132 80,132" fill="#2A4428"/>
+    <polygon points="88,148 83,129 93,129" fill="#243C24"/>
+    <polygon points="100,148 96,136 104,136" fill="#344E30"/>
+    <polygon points="212,148 208,134 216,134" fill="#2A4428"/>
+    <polygon points="224,148 219,130 229,130" fill="#243C24"/>
+    <polygon points="236,148 232,136 240,136" fill="#344E30"/>
+    <polygon points="162,148 158,140 166,140" fill="#2A4428"/>
   </g>
+
+  <!-- Baseboard moulding -->
+  <rect x="0" y="448" width="800" height="6" fill="#CAC0B4" opacity="0.55"/>
+  <rect x="0" y="453" width="800" height="2" fill="#B0A498" opacity="0.32"/>
+  <!-- Floor -->
+  <rect x="0" y="455" width="800" height="145" fill="url(#floor-l)"/>
+  <line x1="0" y1="472" x2="800" y2="472" stroke="#8A6038" stroke-width="1.5" opacity="0.36"/>
+  <line x1="0" y1="492" x2="800" y2="492" stroke="#8A6038" stroke-width="1.4" opacity="0.28"/>
+  <line x1="0" y1="514" x2="800" y2="514" stroke="#8A6038" stroke-width="1.2" opacity="0.22"/>
+  <line x1="0" y1="538" x2="800" y2="538" stroke="#8A6038" stroke-width="1" opacity="0.18"/>
+  <line x1="128" y1="455" x2="128" y2="600" stroke="#8A6038" stroke-width="1" opacity="0.2"/>
+  <line x1="306" y1="455" x2="306" y2="600" stroke="#8A6038" stroke-width="1" opacity="0.2"/>
+  <line x1="484" y1="455" x2="484" y2="600" stroke="#8A6038" stroke-width="1" opacity="0.2"/>
+  <line x1="648" y1="455" x2="648" y2="600" stroke="#8A6038" stroke-width="1" opacity="0.2"/>
+
+  <!-- Floor lamp (left wall corner) -->
+  <!-- Lamp ambient glow on wall -->
+  <ellipse cx="28" cy="188" rx="96" ry="110" fill="url(#lamp-glow)"/>
+  <!-- Pole -->
+  <rect x="24" y="188" width="5" height="268" rx="2" fill="#6A5840"/>
+  <!-- Base weight -->
+  <ellipse cx="26" cy="456" rx="18" ry="5" fill="#4A3828"/>
+  <ellipse cx="26" cy="453" rx="12" ry="3.5" fill="#6A5848"/>
+  <!-- Arc arm -->
+  <path d="M29 188 Q58 162 68 178" stroke="#6A5840" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <!-- Shade -->
+  <path d="M50 168 L88 168 L82 188 L56 188 Z" fill="#F2E0B0" opacity="0.96"/>
+  <path d="M50 168 L88 168 L82 188 L56 188 Z" fill="none" stroke="#C8A870" stroke-width="1.5"/>
+  <!-- Shade inner glow -->
+  <ellipse cx="69" cy="188" rx="20" ry="4" fill="#F8E070" opacity="0.28"/>
 
   <!-- Side table (left of sofa) -->
   <!-- Table top -->
-  <rect x="8" y="374" width="62" height="11" rx="4" fill="#7A6248"/>
-  <!-- Top surface gloss -->
-  <rect x="8" y="374" width="62" height="4" rx="4" fill="#9A8060" opacity="0.3"/>
-  <!-- Table top front face depth -->
-  <rect x="8" y="382" width="62" height="4" rx="0" fill="#5A4230" opacity="0.28"/>
+  <rect x="4" y="370" width="58" height="11" rx="4" fill="#7A6248"/>
+  <rect x="4" y="370" width="58" height="4" rx="4" fill="#9A8060" opacity="0.32"/>
+  <rect x="4" y="378" width="58" height="4" fill="#5A4230" opacity="0.28"/>
   <!-- Two legs -->
-  <rect x="12" y="385" width="10" height="78" rx="3" fill="#6B5240"/>
-  <rect x="58" y="385" width="10" height="78" rx="3" fill="#6B5240"/>
-  <!-- Leg right-face shadow strips -->
-  <rect x="20" y="385" width="2" height="78" rx="1" fill="#3A2818" opacity="0.18"/>
-  <rect x="66" y="385" width="2" height="78" rx="1" fill="#3A2818" opacity="0.18"/>
-  <!-- Stretcher rail connecting legs -->
-  <rect x="14" y="438" width="50" height="5" rx="2" fill="#6B5240" opacity="0.7"/>
-  <!-- Vase/candle on table top -->
-  <rect x="25" y="356" width="16" height="18" rx="4" fill="#D4C8B8"/>
-  <rect x="23" y="352" width="20" height="6" rx="3" fill="#C8B898"/>
-  <!-- Vase highlight -->
-  <rect x="27" y="357" width="5" height="12" rx="2" fill="white" opacity="0.2"/>
+  <rect x="7" y="382" width="10" height="74" rx="3" fill="#6B5240"/>
+  <rect x="50" y="382" width="10" height="74" rx="3" fill="#6B5240"/>
+  <!-- Leg depth shadow -->
+  <rect x="15" y="382" width="2" height="74" rx="1" fill="#3A2818" opacity="0.15"/>
+  <rect x="58" y="382" width="2" height="74" rx="1" fill="#3A2818" opacity="0.15"/>
+  <!-- Stretcher -->
+  <rect x="9" y="430" width="48" height="5" rx="2" fill="#6B5240" opacity="0.72"/>
+  <!-- Vase on table -->
+  <rect x="22" y="352" width="14" height="20" rx="4" fill="#C8B4A0"/>
+  <rect x="20" y="348" width="18" height="6" rx="3" fill="#B4A090"/>
+  <rect x="24" y="353" width="4" height="13" rx="2" fill="white" opacity="0.18"/>
+
+  <!-- Rug under coffee table -->
+  <ellipse cx="300" cy="462" rx="232" ry="32" fill="#B46848" opacity="0.44"/>
+  <ellipse cx="300" cy="462" rx="216" ry="27" fill="none" stroke="#9C5838" stroke-width="2.5" opacity="0.34"/>
+  <ellipse cx="300" cy="462" rx="198" ry="22" fill="none" stroke="#C87858" stroke-width="1" opacity="0.2"/>
+
+  <!-- Sofa shadow on floor -->
+  <ellipse cx="296" cy="468" rx="256" ry="14" fill="#142210" opacity="0.2"/>
+
+  <!-- SOFA -->
+  <!-- Sofa base body -->
+  <rect x="48" y="316" width="492" height="142" rx="18" fill="#1A3628"/>
+  <!-- Front apron panel (lower face, slightly distinct) -->
+  <rect x="66" y="424" width="468" height="26" fill="#223C2E" opacity="0.55"/>
+  <!-- Back panel (darkest element) -->
+  <rect x="48" y="272" width="492" height="58" rx="14" fill="#122018"/>
+
+  <!-- Left arm -->
+  <rect x="26" y="278" width="34" height="150" rx="10" fill="#122018"/>
+  <!-- Arm top rolled surface -->
+  <rect x="26" y="278" width="34" height="16" rx="8" fill="#3A6452" opacity="0.55"/>
+  <!-- Arm side inner shadow -->
+  <rect x="56" y="294" width="4" height="130" rx="2" fill="#0A1610" opacity="0.25"/>
+
+  <!-- Right arm -->
+  <rect x="540" y="278" width="34" height="150" rx="10" fill="#122018"/>
+  <rect x="540" y="278" width="34" height="16" rx="8" fill="#3A6452" opacity="0.55"/>
+  <rect x="540" y="294" width="4" height="130" rx="2" fill="#0A1610" opacity="0.25"/>
+
+  <!-- Back cushion 1 -->
+  <rect x="62" y="274" width="148" height="54" rx="10" fill="#2A5040"/>
+  <rect x="62" y="274" width="148" height="54" rx="10" fill="none" stroke="#0C1A12" stroke-width="1.5" opacity="0.52"/>
+  <rect x="62" y="274" width="148" height="20" rx="10" fill="#3C6450" opacity="0.3"/>
+  <circle cx="136" cy="301" r="3.5" fill="#081210" opacity="0.65"/>
+  <!-- Back cushion 2 -->
+  <rect x="222" y="274" width="148" height="54" rx="10" fill="#2A5040"/>
+  <rect x="222" y="274" width="148" height="54" rx="10" fill="none" stroke="#0C1A12" stroke-width="1.5" opacity="0.52"/>
+  <rect x="222" y="274" width="148" height="20" rx="10" fill="#3C6450" opacity="0.3"/>
+  <circle cx="296" cy="301" r="3.5" fill="#081210" opacity="0.65"/>
+  <!-- Back cushion 3 -->
+  <rect x="382" y="274" width="148" height="54" rx="10" fill="#2A5040"/>
+  <rect x="382" y="274" width="148" height="54" rx="10" fill="none" stroke="#0C1A12" stroke-width="1.5" opacity="0.52"/>
+  <rect x="382" y="274" width="148" height="20" rx="10" fill="#3C6450" opacity="0.3"/>
+  <circle cx="456" cy="301" r="3.5" fill="#081210" opacity="0.65"/>
+
+  <!-- Seat cushion 1 -->
+  <rect x="66" y="322" width="148" height="108" rx="11" fill="#2A5040"/>
+  <rect x="66" y="322" width="148" height="108" rx="11" fill="none" stroke="#0C1A12" stroke-width="1.5" opacity="0.52"/>
+  <rect x="66" y="322" width="148" height="38" rx="11" fill="#3C6450" opacity="0.28"/>
+  <rect x="66" y="424" width="148" height="6" fill="#081210" opacity="0.5"/>
+  <circle cx="140" cy="366" r="4.5" fill="#081210" opacity="0.6"/>
+  <!-- Seat cushion 2 -->
+  <rect x="226" y="322" width="148" height="108" rx="11" fill="#2A5040"/>
+  <rect x="226" y="322" width="148" height="108" rx="11" fill="none" stroke="#0C1A12" stroke-width="1.5" opacity="0.52"/>
+  <rect x="226" y="322" width="148" height="38" rx="11" fill="#3C6450" opacity="0.28"/>
+  <rect x="226" y="424" width="148" height="6" fill="#081210" opacity="0.5"/>
+  <circle cx="300" cy="366" r="4.5" fill="#081210" opacity="0.6"/>
+  <!-- Seat cushion 3 -->
+  <rect x="386" y="322" width="146" height="108" rx="11" fill="#2A5040"/>
+  <rect x="386" y="322" width="146" height="108" rx="11" fill="none" stroke="#0C1A12" stroke-width="1.5" opacity="0.52"/>
+  <rect x="386" y="322" width="146" height="38" rx="11" fill="#3C6450" opacity="0.28"/>
+  <rect x="386" y="424" width="146" height="6" fill="#081210" opacity="0.5"/>
+  <circle cx="459" cy="366" r="4.5" fill="#081210" opacity="0.6"/>
+
+  <!-- Sofa legs (walnut) -->
+  <rect x="68" y="449" width="16" height="22" rx="4" fill="#5A4830"/>
+  <rect x="262" y="449" width="16" height="22" rx="4" fill="#5A4830"/>
+  <rect x="464" y="449" width="16" height="22" rx="4" fill="#5A4830"/>
+  <rect x="508" y="449" width="16" height="22" rx="4" fill="#5A4830"/>
+
+  <!-- Orange throw pillow (brand accent) -->
+  <rect x="283" y="272" width="74" height="74" rx="11" fill="#E8602A" opacity="0.9"/>
+  <line x1="283" y1="309" x2="357" y2="309" stroke="#B84818" stroke-width="1.5" opacity="0.28"/>
+  <line x1="320" y1="272" x2="320" y2="346" stroke="#B84818" stroke-width="1.5" opacity="0.28"/>
+
+  <!-- Coffee table (walnut) -->
+  <rect x="154" y="420" width="306" height="22" rx="5" fill="#5C4A35"/>
+  <rect x="154" y="420" width="306" height="6" rx="2" fill="#8A6A50" opacity="0.38"/>
+  <rect x="154" y="438" width="306" height="4" rx="0" fill="#2A1808" opacity="0.38"/>
+  <!-- Table top items: stacked books -->
+  <rect x="166" y="412" width="64" height="9" rx="2" fill="#C8B898"/>
+  <rect x="168" y="403" width="60" height="9" rx="2" fill="#B8A884"/>
+  <rect x="170" y="395" width="56" height="9" rx="2" fill="#A89870"/>
+  <!-- Mug -->
+  <rect x="312" y="410" width="20" height="14" rx="3" fill="#D4C8B8"/>
+  <rect x="310" y="406" width="24" height="6" rx="2" fill="#C4B8A4"/>
+  <!-- Table legs -->
+  <rect x="170" y="442" width="13" height="28" rx="4" fill="#4A3825"/>
+  <rect x="435" y="442" width="13" height="28" rx="4" fill="#4A3825"/>
+  <!-- Cross stretcher -->
+  <rect x="178" y="456" width="252" height="5" rx="2" fill="#4A3825" opacity="0.55"/>
+
+  <!-- Large tropical plant (right, in front of window) -->
+  <!-- Stem above pot -->
+  <rect x="694" y="342" width="6" height="64" rx="2" fill="#5A4A2E"/>
+  <!-- Pot body (tapered ceramic) -->
+  <path d="M676 455 L668 408 L728 408 L720 455 Z" fill="#8B7A5A"/>
+  <!-- Pot left highlight -->
+  <path d="M676 455 L668 408 L680 408 L688 455 Z" fill="#A89A72" opacity="0.36"/>
+  <!-- Pot rim -->
+  <rect x="663" y="401" width="70" height="10" rx="4" fill="#9A8A6A"/>
+  <rect x="663" y="401" width="70" height="4" rx="4" fill="#BAA882" opacity="0.36"/>
+  <!-- Soil -->
+  <ellipse cx="697" cy="407" rx="27" ry="5" fill="#3A2E18" opacity="0.82"/>
+  <!-- Saucer -->
+  <ellipse cx="697" cy="458" rx="48" ry="7" fill="#A89878"/>
+  <ellipse cx="697" cy="458" rx="48" ry="7" fill="none" stroke="#8A7A58" stroke-width="1.5"/>
+  <ellipse cx="697" cy="457" rx="40" ry="5" fill="none" stroke="#9A8A68" stroke-width="1" opacity="0.42"/>
+  <!-- Leaf paths -->
+  <path d="M697 342 Q665 300 669 258 Q687 286 697 242 Q707 286 727 260 Q723 304 697 342Z" fill="#4E7A3C"/>
+  <path d="M697 328 Q669 290 675 252 Q691 276 697 236 Q703 276 721 254 Q721 292 697 328Z" fill="#5A8A46" opacity="0.85"/>
+  <path d="M697 314 Q675 280 679 246 Q691 268 697 230 Q703 266 717 248 Q715 282 697 314Z" fill="#3E6A2E" opacity="0.78"/>
+  <path d="M695 300 Q655 280 633 258 Q655 266 663 250 Q669 268 695 300Z" fill="#4E7A3C" opacity="0.7"/>
+  <path d="M699 286 Q739 266 759 246 Q737 254 729 240 Q727 258 699 286Z" fill="#5A8A46" opacity="0.66"/>
 </svg>
