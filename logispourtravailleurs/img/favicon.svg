@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- White background -->
+  <rect width="32" height="32" fill="#FFFFFF"/>
+  <!-- Chimney (behind roof so roof overlaps its base) -->
+  <rect x="22" y="4" width="3" height="10" fill="#1A2744"/>
+  <!-- Roof: wide angular chevron with depth -->
+  <polygon points="0,19 16,6 32,19 29,21 16,10 3,21" fill="#1A2744"/>
+  <!-- 2x2 gold window grid -->
+  <rect x="12" y="22" width="3" height="3" fill="#C4982A"/>
+  <rect x="17" y="22" width="3" height="3" fill="#C4982A"/>
+  <rect x="12" y="26" width="3" height="3" fill="#C4982A"/>
+  <rect x="17" y="26" width="3" height="3" fill="#C4982A"/>
+</svg>
