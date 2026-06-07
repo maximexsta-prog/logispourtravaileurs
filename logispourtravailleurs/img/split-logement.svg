@@ -59,45 +59,55 @@
   <!-- Sofa shadow on floor -->
   <ellipse cx="310" cy="474" rx="240" ry="12" fill="#1E3A2F" opacity="0.16"/>
 
-  <!-- Sofa base -->
-  <rect x="74" y="316" width="474" height="156" rx="16" fill="#8B9E7A"/>
-  <!-- Sofa back panel (darker backdrop) -->
-  <rect x="74" y="274" width="474" height="60" rx="12" fill="#7A8E6A"/>
-  <!-- Sofa back cushions (3, matching seat positions) -->
-  <rect x="86" y="276" width="142" height="56" rx="9" fill="#96AA84"/>
-  <rect x="240" y="276" width="142" height="56" rx="9" fill="#96AA84"/>
-  <rect x="394" y="276" width="134" height="56" rx="9" fill="#96AA84"/>
+  <!-- Sofa base (brand --green-dark) -->
+  <rect x="74" y="316" width="474" height="156" rx="16" fill="#1E3A2F"/>
+  <!-- Front apron zone (slightly lighter to read as a separate panel) -->
+  <rect x="90" y="422" width="456" height="44" rx="0" fill="#243F34" opacity="0.55"/>
+  <!-- Sofa back panel (deep, darker than base) -->
+  <rect x="74" y="274" width="474" height="60" rx="12" fill="#152820"/>
+  <!-- Sofa back cushions (brand --green-mid) -->
+  <rect x="86" y="276" width="142" height="56" rx="9" fill="#2D5543"/>
+  <rect x="240" y="276" width="142" height="56" rx="9" fill="#2D5543"/>
+  <rect x="394" y="276" width="134" height="56" rx="9" fill="#2D5543"/>
+  <!-- Back cushion piping seams -->
+  <rect x="86" y="276" width="142" height="56" rx="9" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
+  <rect x="240" y="276" width="142" height="56" rx="9" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
+  <rect x="394" y="276" width="134" height="56" rx="9" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
   <!-- Back cushion top highlights (puffiness) -->
-  <rect x="86" y="276" width="142" height="20" rx="9" fill="#AABE96" opacity="0.3"/>
-  <rect x="240" y="276" width="142" height="20" rx="9" fill="#AABE96" opacity="0.3"/>
-  <rect x="394" y="276" width="134" height="20" rx="9" fill="#AABE96" opacity="0.3"/>
+  <rect x="86" y="276" width="142" height="20" rx="9" fill="#3A6A52" opacity="0.32"/>
+  <rect x="240" y="276" width="142" height="20" rx="9" fill="#3A6A52" opacity="0.32"/>
+  <rect x="394" y="276" width="134" height="20" rx="9" fill="#3A6A52" opacity="0.32"/>
   <!-- Back cushion dimples -->
-  <circle cx="157" cy="304" r="3" fill="#7A8E6A" opacity="0.42"/>
-  <circle cx="311" cy="304" r="3" fill="#7A8E6A" opacity="0.42"/>
-  <circle cx="461" cy="304" r="3" fill="#7A8E6A" opacity="0.42"/>
-  <!-- Sofa arms -->
-  <rect x="54" y="285" width="30" height="137" rx="8" fill="#7A8E6A"/>
-  <!-- Arm top surface (lighter) -->
-  <rect x="54" y="285" width="30" height="7" rx="4" fill="#9AB08A" opacity="0.55"/>
-  <rect x="518" y="285" width="30" height="137" rx="8" fill="#7A8E6A"/>
-  <rect x="518" y="285" width="30" height="7" rx="4" fill="#9AB08A" opacity="0.55"/>
-  <!-- Sofa seat cushions -->
-  <rect x="90" y="314" width="144" height="106" rx="10" fill="#96AA84"/>
-  <rect x="244" y="314" width="144" height="106" rx="10" fill="#96AA84"/>
-  <rect x="398" y="314" width="136" height="106" rx="10" fill="#96AA84"/>
+  <circle cx="157" cy="304" r="3" fill="#0C1E16" opacity="0.6"/>
+  <circle cx="311" cy="304" r="3" fill="#0C1E16" opacity="0.6"/>
+  <circle cx="461" cy="304" r="3" fill="#0C1E16" opacity="0.6"/>
+  <!-- Sofa arms (deep, same as back panel) -->
+  <rect x="54" y="285" width="30" height="137" rx="8" fill="#152820"/>
+  <!-- Arm top surface (rolled-arm highlight, taller) -->
+  <rect x="54" y="285" width="30" height="14" rx="6" fill="#3A6A52" opacity="0.58"/>
+  <rect x="518" y="285" width="30" height="137" rx="8" fill="#152820"/>
+  <rect x="518" y="285" width="30" height="14" rx="6" fill="#3A6A52" opacity="0.58"/>
+  <!-- Sofa seat cushions (brand --green-mid) -->
+  <rect x="90" y="314" width="144" height="106" rx="10" fill="#2D5543"/>
+  <rect x="244" y="314" width="144" height="106" rx="10" fill="#2D5543"/>
+  <rect x="398" y="314" width="136" height="106" rx="10" fill="#2D5543"/>
+  <!-- Seat cushion piping seams -->
+  <rect x="90" y="314" width="144" height="106" rx="10" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
+  <rect x="244" y="314" width="144" height="106" rx="10" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
+  <rect x="398" y="314" width="136" height="106" rx="10" fill="none" stroke="#14281E" stroke-width="1.5" opacity="0.45"/>
   <!-- Seat cushion top highlights (puffiness) -->
-  <rect x="90" y="314" width="144" height="36" rx="10" fill="#AABE96" opacity="0.3"/>
-  <rect x="244" y="314" width="144" height="36" rx="10" fill="#AABE96" opacity="0.3"/>
-  <rect x="398" y="314" width="136" height="36" rx="10" fill="#AABE96" opacity="0.3"/>
+  <rect x="90" y="314" width="144" height="36" rx="10" fill="#3A6A52" opacity="0.32"/>
+  <rect x="244" y="314" width="144" height="36" rx="10" fill="#3A6A52" opacity="0.32"/>
+  <rect x="398" y="314" width="136" height="36" rx="10" fill="#3A6A52" opacity="0.32"/>
   <!-- Seat cushion front face (depth strip) -->
-  <rect x="90" y="414" width="144" height="6" rx="0" fill="#7A8E6A" opacity="0.35"/>
-  <rect x="244" y="414" width="144" height="6" rx="0" fill="#7A8E6A" opacity="0.35"/>
-  <rect x="398" y="414" width="136" height="6" rx="0" fill="#7A8E6A" opacity="0.35"/>
+  <rect x="90" y="414" width="144" height="6" rx="0" fill="#091410" opacity="0.5"/>
+  <rect x="244" y="414" width="144" height="6" rx="0" fill="#091410" opacity="0.5"/>
+  <rect x="398" y="414" width="136" height="6" rx="0" fill="#091410" opacity="0.5"/>
   <!-- Seat cushion dimples -->
-  <circle cx="162" cy="355" r="4" fill="#7A8E6A" opacity="0.48"/>
-  <circle cx="316" cy="355" r="4" fill="#7A8E6A" opacity="0.48"/>
-  <circle cx="466" cy="355" r="4" fill="#7A8E6A" opacity="0.48"/>
-  <!-- Sofa legs -->
+  <circle cx="162" cy="355" r="4" fill="#0C1E16" opacity="0.6"/>
+  <circle cx="316" cy="355" r="4" fill="#0C1E16" opacity="0.6"/>
+  <circle cx="466" cy="355" r="4" fill="#0C1E16" opacity="0.6"/>
+  <!-- Sofa legs (walnut brown) -->
   <rect x="88" y="458" width="14" height="22" rx="3" fill="#5A4A35"/>
   <rect x="256" y="458" width="14" height="22" rx="3" fill="#5A4A35"/>
   <rect x="484" y="458" width="14" height="22" rx="3" fill="#5A4A35"/>
