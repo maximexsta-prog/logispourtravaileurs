@@ -41,6 +41,16 @@
   <!-- Bed shadow on floor -->
   <ellipse cx="200" cy="204" rx="138" ry="7" fill="#3A2010" opacity="0.1"/>
 
+  <!-- Window with sky gradient -->
+  <rect x="294" y="16" width="92" height="114" rx="3" fill="url(#win-ch)"/>
+  <rect x="294" y="16" width="92" height="114" fill="none" stroke="#8A7A60" stroke-width="3" rx="3"/>
+  <line x1="340" y1="16" x2="340" y2="130" stroke="#8A7A60" stroke-width="2"/>
+  <line x1="294" y1="73" x2="386" y2="73" stroke="#8A7A60" stroke-width="2"/>
+  <!-- Window reflection -->
+  <line x1="300" y1="22" x2="314" y2="40" stroke="white" stroke-width="2.5" opacity="0.32" stroke-linecap="round"/>
+  <!-- Window sill -->
+  <rect x="290" y="128" width="100" height="6" rx="2" fill="#C8B898"/>
+
   <!-- Headboard -->
   <rect x="58" y="96" width="284" height="54" rx="8" fill="#5C4A35"/>
   <!-- Headboard top rail highlight -->
@@ -85,16 +95,6 @@
   <path d="M17 116 L43 116 L39 130 L21 130 Z" fill="none" stroke="#C8A870" stroke-width="1.5"/>
   <!-- Lamp glow on nightstand -->
   <ellipse cx="30" cy="142" rx="18" ry="4" fill="#F8E880" opacity="0.16"/>
-
-  <!-- Window with sky gradient -->
-  <rect x="294" y="16" width="92" height="114" rx="3" fill="url(#win-ch)"/>
-  <rect x="294" y="16" width="92" height="114" fill="none" stroke="#8A7A60" stroke-width="3" rx="3"/>
-  <line x1="340" y1="16" x2="340" y2="130" stroke="#8A7A60" stroke-width="2"/>
-  <line x1="294" y1="73" x2="386" y2="73" stroke="#8A7A60" stroke-width="2"/>
-  <!-- Window reflection -->
-  <line x1="300" y1="22" x2="314" y2="40" stroke="white" stroke-width="2.5" opacity="0.32" stroke-linecap="round"/>
-  <!-- Window sill -->
-  <rect x="290" y="128" width="100" height="6" rx="2" fill="#C8B898"/>
 
   <!-- Plant using leaf paths -->
   <rect x="20" y="106" width="10" height="22" rx="3" fill="#7A6248"/>
