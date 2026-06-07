@@ -28,6 +28,9 @@
   <!-- Subtle dado rail line -->
   <line x1="0" y1="290" x2="800" y2="290" stroke="#C0B8AC" stroke-width="1.5" opacity="0.35"/>
 
+  <!-- Baseboard molding (wall-floor junction) -->
+  <rect x="0" y="452" width="800" height="8" fill="#C8C0B0" opacity="0.5"/>
+  <rect x="0" y="458" width="800" height="2" fill="#B0A898" opacity="0.3"/>
   <!-- Floor -->
   <rect x="0" y="460" width="800" height="140" fill="url(#floor-l)"/>
   <!-- Floor planks -->
@@ -54,7 +57,7 @@
   <path d="M554 460 L764 460 L800 600 L500 600 Z" fill="#F0E8C0" opacity="0.06"/>
 
   <!-- Sofa shadow on floor -->
-  <ellipse cx="310" cy="474" rx="240" ry="12" fill="#1E3A2F" opacity="0.09"/>
+  <ellipse cx="310" cy="474" rx="240" ry="12" fill="#1E3A2F" opacity="0.16"/>
 
   <!-- Sofa base -->
   <rect x="74" y="316" width="474" height="156" rx="16" fill="#8B9E7A"/>
@@ -64,6 +67,10 @@
   <rect x="86" y="276" width="142" height="56" rx="9" fill="#96AA84"/>
   <rect x="240" y="276" width="142" height="56" rx="9" fill="#96AA84"/>
   <rect x="394" y="276" width="134" height="56" rx="9" fill="#96AA84"/>
+  <!-- Back cushion top highlights (puffiness) -->
+  <rect x="86" y="276" width="142" height="20" rx="9" fill="#AABE96" opacity="0.3"/>
+  <rect x="240" y="276" width="142" height="20" rx="9" fill="#AABE96" opacity="0.3"/>
+  <rect x="394" y="276" width="134" height="20" rx="9" fill="#AABE96" opacity="0.3"/>
   <!-- Back cushion dimples -->
   <circle cx="157" cy="304" r="3" fill="#7A8E6A" opacity="0.42"/>
   <circle cx="311" cy="304" r="3" fill="#7A8E6A" opacity="0.42"/>
@@ -78,6 +85,10 @@
   <rect x="90" y="314" width="144" height="106" rx="10" fill="#96AA84"/>
   <rect x="244" y="314" width="144" height="106" rx="10" fill="#96AA84"/>
   <rect x="398" y="314" width="136" height="106" rx="10" fill="#96AA84"/>
+  <!-- Seat cushion top highlights (puffiness) -->
+  <rect x="90" y="314" width="144" height="36" rx="10" fill="#AABE96" opacity="0.3"/>
+  <rect x="244" y="314" width="144" height="36" rx="10" fill="#AABE96" opacity="0.3"/>
+  <rect x="398" y="314" width="136" height="36" rx="10" fill="#AABE96" opacity="0.3"/>
   <!-- Seat cushion front face (depth strip) -->
   <rect x="90" y="414" width="144" height="6" rx="0" fill="#7A8E6A" opacity="0.35"/>
   <rect x="244" y="414" width="144" height="6" rx="0" fill="#7A8E6A" opacity="0.35"/>
@@ -114,13 +125,28 @@
   <rect x="306" y="410" width="24" height="6" rx="2" fill="#C8B898"/>
 
   <!-- Rug under coffee table -->
-  <ellipse cx="322" cy="470" rx="210" ry="30" fill="#C47858" opacity="0.28"/>
-  <ellipse cx="322" cy="470" rx="192" ry="24" fill="none" stroke="#B06848" stroke-width="2" opacity="0.22"/>
+  <ellipse cx="322" cy="470" rx="210" ry="30" fill="#C47858" opacity="0.38"/>
+  <ellipse cx="322" cy="470" rx="196" ry="26" fill="none" stroke="#B06848" stroke-width="2.5" opacity="0.3"/>
+  <ellipse cx="322" cy="470" rx="180" ry="21" fill="none" stroke="#D48870" stroke-width="1" opacity="0.18"/>
 
   <!-- Large plant (right) — leaf paths for tropical feel -->
-  <!-- Pot -->
-  <rect x="686" y="360" width="28" height="104" rx="5" fill="#7A6248"/>
-  <rect x="680" y="458" width="40" height="12" rx="4" fill="#6B5240"/>
+  <!-- Stem above pot -->
+  <rect x="697" y="358" width="6" height="56" rx="2" fill="#5A4A2E"/>
+  <!-- Pot body (tapered ceramic — wider at rim, narrower at base) -->
+  <path d="M678 460 L671 414 L729 414 L722 460 Z" fill="#8B7A5A"/>
+  <!-- Pot left-face highlight -->
+  <path d="M678 460 L671 414 L683 414 L690 460 Z" fill="#A89A72" opacity="0.38"/>
+  <!-- Pot rim (top lip, slightly wider) -->
+  <rect x="666" y="407" width="68" height="10" rx="4" fill="#9A8A6A"/>
+  <!-- Rim top highlight -->
+  <rect x="666" y="407" width="68" height="4" rx="4" fill="#BAA882" opacity="0.38"/>
+  <!-- Soil surface -->
+  <ellipse cx="700" cy="413" rx="26" ry="5" fill="#3A2E18" opacity="0.82"/>
+  <!-- Saucer -->
+  <ellipse cx="700" cy="463" rx="46" ry="7" fill="#A89878"/>
+  <ellipse cx="700" cy="463" rx="46" ry="7" fill="none" stroke="#8A7A58" stroke-width="1.5"/>
+  <!-- Saucer inner ring -->
+  <ellipse cx="700" cy="462" rx="38" ry="5" fill="none" stroke="#9A8A68" stroke-width="1" opacity="0.45"/>
   <!-- Leaves (3 directional, layered) -->
   <path d="M700 360 Q668 320 672 278 Q690 306 700 262 Q710 306 730 280 Q726 324 700 360Z" fill="#4E7A3C"/>
   <path d="M700 346 Q672 308 678 270 Q694 296 700 254 Q706 296 720 272 Q720 312 700 346Z" fill="#5A8A46" opacity="0.85"/>
@@ -157,11 +183,23 @@
   </g>
 
   <!-- Side table (left of sofa) -->
-  <rect x="36" y="380" width="18" height="102" rx="3" fill="#6B5240"/>
-  <rect x="18" y="374" width="54" height="12" rx="3" fill="#7A6248"/>
-  <!-- Table top surface gloss -->
-  <rect x="18" y="374" width="54" height="4" rx="2" fill="#9A8060" opacity="0.3"/>
-  <!-- Small candle/vase on side table -->
-  <rect x="30" y="360" width="16" height="16" rx="3" fill="#D4C8B8"/>
-  <rect x="28" y="357" width="20" height="5" rx="2" fill="#C8B898"/>
+  <!-- Table top -->
+  <rect x="8" y="374" width="62" height="11" rx="4" fill="#7A6248"/>
+  <!-- Top surface gloss -->
+  <rect x="8" y="374" width="62" height="4" rx="4" fill="#9A8060" opacity="0.3"/>
+  <!-- Table top front face depth -->
+  <rect x="8" y="382" width="62" height="4" rx="0" fill="#5A4230" opacity="0.28"/>
+  <!-- Two legs -->
+  <rect x="12" y="385" width="10" height="78" rx="3" fill="#6B5240"/>
+  <rect x="58" y="385" width="10" height="78" rx="3" fill="#6B5240"/>
+  <!-- Leg right-face shadow strips -->
+  <rect x="20" y="385" width="2" height="78" rx="1" fill="#3A2818" opacity="0.18"/>
+  <rect x="66" y="385" width="2" height="78" rx="1" fill="#3A2818" opacity="0.18"/>
+  <!-- Stretcher rail connecting legs -->
+  <rect x="14" y="438" width="50" height="5" rx="2" fill="#6B5240" opacity="0.7"/>
+  <!-- Vase/candle on table top -->
+  <rect x="25" y="356" width="16" height="18" rx="4" fill="#D4C8B8"/>
+  <rect x="23" y="352" width="20" height="6" rx="3" fill="#C8B898"/>
+  <!-- Vase highlight -->
+  <rect x="27" y="357" width="5" height="12" rx="2" fill="white" opacity="0.2"/>
 </svg>
