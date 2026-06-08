@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      gap: 40px;
+    }
+    h2 { color: #333; margin: 0 0 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .row {
+      display: flex;
+      align-items: flex-end;
+      gap: 32px;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .label { font-size: 11px; color: #888; }
+    .tab-mock {
+      background: #e8e8e8;
+      border-radius: 8px 8px 0 0;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .dark { background: #1a1a2e; }
+    .dark .tab-mock { background: #2d2d44; color: #eee; }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h2 style="text-align:center;">Favicon — LogisPourTravailleurs.ca</h2>
+  </div>
+
+  <!-- Icon at various sizes -->
+  <div class="row">
+
+    <div class="item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="180" height="180">
+        <rect width="32" height="32" rx="7" fill="#1E3A2F"/>
+        <polygon points="16,5 25,14 7,14" fill="white"/>
+        <rect x="9" y="14" width="14" height="13" fill="white"/>
+        <rect x="13" y="20" width="6" height="7" rx="2" fill="#E8602A"/>
+      </svg>
+      <span class="label">180 × 180</span>
+    </div>
+
+    <div class="item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+        <rect width="32" height="32" rx="7" fill="#1E3A2F"/>
+        <polygon points="16,5 25,14 7,14" fill="white"/>
+        <rect x="9" y="14" width="14" height="13" fill="white"/>
+        <rect x="13" y="20" width="6" height="7" rx="2" fill="#E8602A"/>
+      </svg>
+      <span class="label">64 × 64</span>
+    </div>
+
+    <div class="item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+        <rect width="32" height="32" rx="7" fill="#1E3A2F"/>
+        <polygon points="16,5 25,14 7,14" fill="white"/>
+        <rect x="9" y="14" width="14" height="13" fill="white"/>
+        <rect x="13" y="20" width="6" height="7" rx="2" fill="#E8602A"/>
+      </svg>
+      <span class="label">32 × 32</span>
+    </div>
+
+    <div class="item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+        <rect width="32" height="32" rx="7" fill="#1E3A2F"/>
+        <polygon points="16,5 25,14 7,14" fill="white"/>
+        <rect x="9" y="14" width="14" height="13" fill="white"/>
+        <rect x="13" y="20" width="6" height="7" rx="2" fill="#E8602A"/>
+      </svg>
+      <span class="label">16 × 16</span>
+    </div>
+
+  </div>
+
+  <!-- Browser tab mockup -->
+  <div>
+    <h2 style="text-align:center; margin-bottom: 12px;">In a browser tab</h2>
+    <div class="tab-mock">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+        <rect width="32" height="32" rx="7" fill="#1E3A2F"/>
+        <polygon points="16,5 25,14 7,14" fill="white"/>
+        <rect x="9" y="14" width="14" height="13" fill="white"/>
+        <rect x="13" y="20" width="6" height="7" rx="2" fill="#E8602A"/>
+      </svg>
+      LogisPourTravailleurs.ca
+    </div>
+  </div>
+
+  <!-- On dark background -->
+  <div class="dark" style="padding: 32px; border-radius: 12px; width: 100%; max-width:600px; text-align:center;">
+    <h2 style="color:#aaa; text-align:center; margin-bottom:20px;">On dark background</h2>
+    <div class="row" style="justify-content:center;">
+      <div class="item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+          <rect width="32" height="32" rx="7" fill="#1E3A2F"/>
+          <polygon points="16,5 25,14 7,14" fill="white"/>
+          <rect x="9" y="14" width="14" height="13" fill="white"/>
+          <rect x="13" y="20" width="6" height="7" rx="2" fill="#E8602A"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
