@@ -3,12 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n-title="true">LogisPourTravailleurs.ca — Une façon simple de rentabiliser un logement disponible.</title>
+  <title>LogisPourTravailleurs.ca — Une façon simple de rentabiliser un logement disponible.</title>
   <meta name="description" content="Ajoutez votre logement à notre réseau et louez vos chambres à des travailleurs calmes et responsables dans la région.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://logispourtravailleurs.ca/">
+  <meta property="og:title" content="LogisPourTravailleurs.ca — Rentabilisez un logement disponible.">
+  <meta property="og:description" content="Ajoutez votre logement à notre réseau et louez vos chambres à des travailleurs calmes et responsables dans la région.">
+  <meta property="og:image" content="https://logispourtravailleurs.ca/img/split-logement.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
   <link rel="apple-touch-icon" href="img/favicon.svg">
+
+  <!-- Preload hero background -->
+  <link rel="preload" as="image" href="img/hero-bg.svg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -903,57 +914,6 @@
     }
 
     /* ============================================================
-       À PROPOS MAXIME
-    ============================================================ */
-    /* SECTION: À propos */
-    .section-about {
-      background: var(--green-dark);
-      padding: 96px 24px;
-      position: relative;
-      overflow: hidden;
-    }
-    .section-about::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 400px; height: 400px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 50%;
-    }
-    .section-about-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 56px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-    .about-photo {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: var(--green-mid);
-      border: 4px solid rgba(255,255,255,0.15);
-    }
-    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
-    .about-content .section-label { color: #F9B27A; }
-    .about-content .section-title { color: var(--white); }
-    .about-content p {
-      font-size: 16px;
-      color: rgba(255,255,255,0.78);
-      margin-top: 16px;
-      max-width: 560px;
-    }
-    .about-content .btn-white { margin-top: 28px; }
-    @media (max-width: 700px) {
-      .section-about-inner { grid-template-columns: 1fr; text-align: center; }
-      .about-photo { margin: 0 auto; }
-    }
-
-    /* ============================================================
        RÉFÉRER
     ============================================================ */
     /* SECTION: Référer */
@@ -1216,7 +1176,7 @@
           <button class="lang-btn active" id="nav-btn-fr" onclick="setLang('fr')">FR</button>
           <button class="lang-btn" id="nav-btn-en" onclick="setLang('en')">EN</button>
         </div>
-        <span class="nav-phone"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 438-345-1888</span>
+        <a href="tel:4383451888" class="nav-phone"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 438-345-1888</a>
         <a href="#hero-form" class="btn-primary nav-cta-desktop" style="padding:10px 18px;font-size:13px;white-space:nowrap" data-i18n="nav.cta">J'ai un logement disponible</a>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -1377,7 +1337,7 @@
   <section class="section-split">
     <div class="section-split-inner">
       <div class="split-img">
-        <img src="img/split-logement.jpg" alt="Logement propre et accueillant" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+        <img src="img/split-logement.jpg" alt="Logement propre et accueillant" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
       </div>
       <div class="split-content" data-i18n-section="rentabiliser">
         <p class="section-label">Simple et efficace</p>
@@ -1407,28 +1367,28 @@
       </div>
       <div class="cards-grid">
         <div class="card">
-          <div class="card-img"><img src="img/card-logement-entier.svg" alt="Logement entier"></div>
+          <div class="card-img"><img src="img/card-logement-entier.svg" alt="Logement entier" loading="lazy"></div>
           <div class="card-body" data-i18n-section="type-1">
             <h4>Logement entier disponible</h4>
             <p>Idéal pour offrir une ou plusieurs chambres à des travailleurs, sans cohabitation avec un résident permanent.</p>
           </div>
         </div>
         <div class="card">
-          <div class="card-img"><img src="img/card-chambre.svg" alt="Chambre meublée"></div>
+          <div class="card-img"><img src="img/card-chambre.svg" alt="Chambre meublée" loading="lazy"></div>
           <div class="card-body" data-i18n-section="type-2">
             <h4>Une ou plusieurs chambres</h4>
             <p>Un logement peut convenir même avec une seule chambre disponible, selon l'emplacement et l'entente.</p>
           </div>
         </div>
         <div class="card">
-          <div class="card-img"><img src="img/card-simple.svg" alt="Espace simple et fonctionnel"></div>
+          <div class="card-img"><img src="img/card-simple.svg" alt="Espace simple et fonctionnel" loading="lazy"></div>
           <div class="card-body" data-i18n-section="type-3">
             <h4>Simple, propre et fonctionnel</h4>
             <p>Le logement n'a pas besoin d'être luxueux. Il doit surtout être propre, pratique et adapté à l'hébergement.</p>
           </div>
         </div>
         <div class="card">
-          <div class="card-img"><img src="img/card-meuble.svg" alt="Logement meublé"></div>
+          <div class="card-img"><img src="img/card-meuble.svg" alt="Logement meublé" loading="lazy"></div>
           <div class="card-body" data-i18n-section="type-4">
             <h4>Meublé ou à préparer</h4>
             <p>Vous avez déjà un logement meublé ou vous pensez le préparer ? Nous pouvons regarder avec vous ce qui serait nécessaire.</p>
